@@ -1,0 +1,83 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPageJuryLogin.master.cs" Inherits="Common_MasterPageJuryLogin" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>APAC Effie <%=GeneralFunction.EffieEventYear() %></title>
+    <!-- InstanceEndEditable -->
+    <link href="../css/TelerikDummy.css" rel="stylesheet" type="text/css" />
+    <link href="../css/style-jury.css" rel="stylesheet" type="text/css" />
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<style>
+  .logo a{
+	position: absolute;
+	background:  url(../images/logo-apaceffie.png?v=1) no-repeat;
+	width: 200px;
+	height: 76px;
+  }
+  .masthead-right{
+	width: 100%;
+  }
+  .nav1{margin-top: unset;}
+  .masthead{height: 120px;}
+</style>
+<body>
+    <form id="form1" runat="server">
+    <div class="wrapper">
+        <div class="masthead">
+            <div class="logo"><a href="#"></a></div>
+            <div class="masthead-right">
+                <div class="nav1">
+<%--                        Final Entry Deadline – 20 December, 2359hrs (UTC/GMT +05:00)<br />
+                        Material Submission by 30 December.<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+--%>
+
+                        &nbsp;<br />
+                        &nbsp;<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+                </div>
+            </div>
+        </div>
+        <div class="content">
+		    <!-- InstanceBeginEditable name="content" -->
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+            </asp:ContentPlaceHolder>
+          <!-- InstanceEndEditable -->
+        </div>
+    </div>
+    <div class="footerContainer">
+	    <div class="footer">
+    	    <%--<div class="footer-left">
+        	    organisers
+            </div>
+            <div class="footer-right">
+        	    links & copyright
+            </div>--%>
+
+            <div class="footer-left">
+                <table> <tbody> <tr> <td style="width: 160px;">Organised by:</td> <%--<td style="width: 240px;">Co-organised &amp; Managed by:</td>--%> </tr> <tr> <td>&nbsp;</td> <td>&nbsp;</td> </tr> <tr> <td><a href="http://ifektiv.com/" target="_blank"><img  src="../images/ifektiv logo_bw.png?sfvrsn=2" alt="logo-CAAAA" title="The Confederation of Asian Advertising Agency Associations" /></a><br /> </td> <%--<td><img src="../images/logo-tenasia.png?sfvrsn=2" alt="logo-tenasia" title="Tenasia" />&nbsp;</td>--%> </tr> </tbody> </table>
+		    </div>
+		    <div class="footer-right">
+                <ul class="sfNavHorizontal sfNavList" style="width:218px;">
+                    <li style="display:none"><a href="http://www.apaceffie.com/sitemap#&panel1-1" target="_blank">Sitemap</a></li>      
+                    <li><a href="http://www.apaceffie.com/terms-of-use#&panel1-1" target="_blank">Terms of Use</a></li>  
+                    <li><a href="http://www.apaceffie.com/privacy-policy#&panel1-1" target="_blank">Privacy Policy</a></li>  
+                </ul>
+                <div style="clear: both;"></div>
+                AWARDING IDEAS THAT WORK &reg;<br /> <br />
+                Effie &reg; is a registered trademark of Effie Worldwide, Inc. and is under <br />
+                license to Ifektiv Pte Ltd. All rights reserved.<br />
+		    </div>
+        </div>  
+    </div>
+    </form>
+</body>
+<!-- InstanceEnd --></html>

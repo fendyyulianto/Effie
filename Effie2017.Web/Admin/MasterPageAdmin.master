@@ -1,0 +1,161 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPageAdmin.master.cs"
+    Inherits="Admin_MasterPageAdmin" %>
+
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>APAC Effie 2019</title>
+    <!-- InstanceEndEditable -->
+    <link href="../css/TelerikDummy.css" rel="stylesheet" type="text/css" />
+    <link href="../css/style-admin.css?v=2.2" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.disableAutoFill.js"></script>
+    <script type="text/javascript" src="../js/jquery.disableAutoFill.min.js"></script>
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+    <style>
+  .logo a{
+	position: absolute;
+	background:  url(../images/logo-apaceffie.png?v=1) no-repeat;
+	width: 200px;
+	height: 76px;
+  }
+  .masthead-right{
+	width: 100%;
+  }
+  .nav1{margin-top: unset;}
+  .masthead{height: 120px;}
+</style>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
+            <Scripts>
+                <%--Needed for JavaScript IntelliSense in VS2010--%>
+                <%--For VS2008 replace RadScriptManager with ScriptManager--%>
+                <%--<asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js" />
+			        <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQuery.js" />
+			        <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQueryInclude.js" />--%>
+            </Scripts>
+        </telerik:RadScriptManager>
+        <%--<telerik:RadFormDecorator ID="RadFormDecorator1" runat="server" DecoratedControls="all" Skin="Default" EnableEmbeddedSkins="true"  />--%>
+    </div>
+    <div class="wrapper">
+        <div class="masthead">
+            <div class="logo">
+                <a href="#"></a>
+            </div>
+            <div class="masthead-right">
+                <div class="user">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" id="tblUser" runat="server">
+                        <tr>
+                            <td style="vertical-align: bottom">
+                                Welcome
+                                <asp:Label ID="lblName" runat="server"></asp:Label><br />
+                                You last signed in at:
+                                <asp:Label ID="lblSign" runat="server">-</asp:Label>
+                            </td>
+                            <td style="vertical-align: bottom;width: 80px;">
+                                <asp:LinkButton ID="lnkBtnLogout" runat="server" Text="Logout" OnClick="lnkBtnLogout_Click"></asp:LinkButton>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="nav">
+                    <ul>
+                        <li id="liEntryList" runat="server" visible="false"><a href="../Admin/EntryList.aspx">/ Entries Submitted</a></li>
+                        <li id="liEntryPendingList" runat="server" visible="false"><a href="../Admin/EntryPendingList.aspx">/ Entries Pending Submission</a></li>
+                        <li id="liInvoiceList" runat="server" visible="false"><a href="../Admin/InvoiceList.aspx">/ Invoices</a></li>
+                        <li id="liAdhocInvoiceList" runat="server" visible="false"><a href="AdhocInvoiceList.aspx">/ Adhoc Invoices</a></li>
+                        <li id="liEntrySubmittedList" runat="server" visible="false"><a href="../Admin/EntrySubmittedList.aspx">/ Materials Submitted</a></li>
+                        <li id="liDownloadMediaList" runat="server" visible="false"><a href="DownloadMediaList.aspx">/ Download Media</a></li>
+                        <li id="liEmailTemplateList" runat="server" visible="false"><a href="../Admin/EmailTemplateList.aspx">/ Email Template</a></li>  
+                        <li id="liUserList" runat="server" visible="false"><a href="../Admin/UserList.aspx">/ User</a></li>
+                        <li id="liAdminList" runat="server" visible="false"><a href="../Admin/AdminList.aspx">/ Admin User</a></li>
+                        <li id="liResetMasterPasswordList" runat="server" visible="false"><a href="../Admin/ResetMasterPassword.aspx">/ Reset Master Password</a></li>
+                    </ul>
+                    <ul>
+                        <li id="liEntryProcessing" runat="server" visible="false"><a href="../Admin/EntryProcessing.aspx">/ Entry Processing</a></li>
+                        <li style="display:none;"><a href="../Admin/EntryProcessing.aspx?Page=Management">/ Entry Processing Management</a></li>
+                        <li id="liFlagReasonCMSlist" runat="server" visible="false"><a href="../Admin/FlagReasonCMSlist.aspx">/ Flag Reason CMS</a></li>
+                        <li id="liJuryList" runat="server" visible="false"><a href="../Admin/JuryList.aspx?r=1">/ Judging</a></li>
+                        <li id="liGalaOrderList" runat="server" visible="false"><a href="../Admin/GalaOrderList.aspx">/ Gala</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+    <div style="height: 80px">
+    </div>
+    <div class="footerContainer">
+        <div class="footer">
+            <%--<div class="footer-left">
+        	organisers
+        </div>
+        <div class="footer-right">
+        	links & copyright
+        </div>--%>
+            <div class="footer-left">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td style="width: 160px;">
+                                Organised by:
+                            </td>
+                            <%--<td style="width: 240px;">
+                                Co-organised &amp; Managed by:
+                            </td>--%>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="http://ifektiv.com/" target="_blank">
+                                    <img  src="../images/ifektiv logo_bw.png?sfvrsn=2"
+                                        alt="logo-CAAAA" title="The Confederation of Asian Advertising Agency Associations" /></a><br />
+                            </td>
+                            <%--<td>
+                                <img src="../images/logo-tenasia.png?sfvrsn=2"
+                                    alt="logo-tenasia" title="Tenasia" />&nbsp;
+                            </td>--%>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="footer-right">
+                <ul class="sfNavHorizontal sfNavList" style="width: 218px;">
+                    <li style="display: none"><a href="http://www.apaceffie.com/sitemap#&panel1-1" target="_blank">
+                        Sitemap</a></li>
+                    <li><a href="http://www.apaceffie.com/terms-of-use#&panel1-1" target="_blank">Terms
+                        of Use</a></li>
+                    <li><a href="http://www.apaceffie.com/privacy-policy#&panel1-1" target="_blank">Privacy
+                        Policy</a></li>
+                </ul>
+                <div style="clear: both;">
+                </div>
+                AWARDING IDEAS THAT WORK &reg;<br /> <br />
+                Effie &reg; is a registered trademark of Effie Worldwide, Inc. and is under <br />
+                license to Ifektiv Pte Ltd. All rights reserved.<br />
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

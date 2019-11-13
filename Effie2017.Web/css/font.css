@@ -1,0 +1,42 @@
+@import url("http://fast.fonts.com/t/1.css?apiType=css&projectid=3ebba16c-7e47-4022-8f72-e92f230c1f51");
+
+@font-face {
+	font-family:"AvantGarde Bold";
+	src:url("assets/AvantGardeBold.eot?#iefix");
+	src:url("assets/AvantGardeBold.eot?#iefix")
+	format("eot"),url("assets/AvantGardeBold.woff")
+	format("woff"),url("assets/AvantGardeBold.ttf")
+	format("truetype"),
+	url("assets/AvantGardeBold.svg#AvantGardeBold")
+	format("svg");
+}
+@font-face{
+	font-family:"AvantGarde Book";
+	src:url("assets/AvantGardeBook.eot?#iefix");
+	src:url("assets/AvantGardeBook.eot?#iefix")
+	format("eot"),url("assets/AvantGardeBook.woff")
+	format("woff"),url("assets/AvantGardeBook.ttf")
+	format("truetype"),
+	url("assets/AvantGardeBook.svg#AvantGardeBook")
+	format("svg");
+}
+@font-face{
+	font-family:"AvantGarde Demi";
+	src:url("assets/AvantGardeDemi.eot?#iefix");
+	src:url("assets/AvantGardeDemi.eot?#iefix")
+	format("eot"),url("assets/AvantGardeDemi.woff")
+	format("woff"),url("assets/AvantGardeDemi.ttf")
+	format("truetype"),
+	url("assets/AvantGardeDemi.svg#AvantGardeDemi")
+	format("svg");
+}
+@font-face{
+	font-family:"AvantGarde Medium";
+	src:url("assets/AvantGardeMedium.eot?#iefix");
+	src:url("assets/AvantGardeMedium.eot?#iefix")
+	format("eot"),url("assets/AvantGardeMedium.woff")
+	format("woff"),url("assets/AvantGardeMedium.ttf")
+	format("truetype"),
+	url("assets/AvantGardeMedium.svg#AvantGardeMedium")
+	format("svg");
+}
