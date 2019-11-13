@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BF554CA0-899F-43B0-9F7F-F3455ED399BE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Effie2017App</RootNamespace>
+    <AssemblyName>Effie2017App</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=17.1.1.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.17.1.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Csla">
+      <HintPath>..\..\share_dll\Csla.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdhocInvoiceAmountReceived\AdhocInvoiceAmountReceived.cs" />
+    <Compile Include="AdhocInvoiceAmountReceived\AdhocInvoiceAmountReceivedList.cs" />
+    <Compile Include="AdhocInvoiceItem\AdhocInvoiceItem.cs" />
+    <Compile Include="AdhocInvoiceItem\AdhocInvoiceItemEntryIdList.cs" />
+    <Compile Include="AdhocInvoiceItem\AdhocInvoiceItemList.cs" />
+    <Compile Include="AdhocInvoice\AdhocInvoice.cs" />
+    <Compile Include="AdhocInvoice\AdhocInvoiceList.cs" />
+    <Compile Include="Administrator\Administrator.cs" />
+    <Compile Include="Administrator\AdministratorList.cs" />
+    <Compile Include="AmountReceived\AmountReceived.cs" />
+    <Compile Include="AmountReceived\AmountReceivedList.cs" />
+    <Compile Include="CompanyCredit\CompanyCredit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CompanyCredit\CompanyCreditList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EmailSent\EmailSent.cs" />
+    <Compile Include="EmailSent\EmailSentList.cs" />
+    <Compile Include="EmailTemplates\EmailTemplate.cs" />
+    <Compile Include="EmailTemplates\EmailTemplateList.cs" />
+    <Compile Include="EntryFormGallery\EntryFormGallery.cs" />
+    <Compile Include="EntryFormGallery\EntryFormGalleryList.cs" />
+    <Compile Include="EntryForm\EntryForm.cs" />
+    <Compile Include="EntryForm\EntryFormList.cs" />
+    <Compile Include="EntryPayment\EntryPayment.cs" />
+    <Compile Include="EntryPayment\EntryPaymentList.cs" />
+    <Compile Include="EntryRemarks\EntryRemarks.cs" />
+    <Compile Include="EntryRemarks\EntryRemarksList.cs" />
+    <Compile Include="Entry\Entry.cs" />
+    <Compile Include="Entry\EntryList.cs" />
+    <Compile Include="FlagReasons\FlagReasons.cs" />
+    <Compile Include="FlagReasons\FlagReasonsList.cs" />
+    <Compile Include="Gala\GalaOrder.cs" />
+    <Compile Include="Gala\GalaOrderList.cs" />
+    <Compile Include="GeneralFunction\GeneralFunctionEffie2017App.cs" />
+    <Compile Include="Gen_GeneralUseValue\Gen_GeneralUseValue.cs" />
+    <Compile Include="Gen_GeneralUseValue\Gen_GeneralUseValueList.cs" />
+    <Compile Include="IndCredit\IndCredit.cs" />
+    <Compile Include="IndCredit\IndCreditList.cs" />
+    <Compile Include="InvoiceRemarks\InvoiceRemarks.cs" />
+    <Compile Include="InvoiceRemarks\InvoiceRemarksList.cs" />
+    <Compile Include="JuryPanelCategory\JuryPanelCategory.cs" />
+    <Compile Include="JuryPanelCategory\JuryPanelCategoryList.cs" />
+    <Compile Include="Jury\Jury.cs" />
+    <Compile Include="Jury\JuryList.cs" />
+    <Compile Include="Jury\JurySetting.cs" />
+    <Compile Include="LoginHistory\LoginHistory.cs" />
+    <Compile Include="LoginHistory\LoginHistoryList.cs" />
+    <Compile Include="Log\RawLog.cs" />
+    <Compile Include="Log\RawLogList.cs" />
+    <Compile Include="Log\TransactionLog.cs" />
+    <Compile Include="Log\TransactionLogList.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistrationEmailSent\RegistrationEmailSent.cs" />
+    <Compile Include="RegistrationEmailSent\RegistrationEmailSentList.cs" />
+    <Compile Include="RegistrationRemarks\RegistrationRemarks.cs" />
+    <Compile Include="RegistrationRemarks\RegistrationRemarksList.cs" />
+    <Compile Include="Registration\Registration.cs" />
+    <Compile Include="Registration\RegistrationList.cs" />
+    <Compile Include="RSVP\RSVP.cs" />
+    <Compile Include="RSVP\RSVPList.cs" />
+    <Compile Include="Score\Score.cs" />
+    <Compile Include="Score\ScoreList.cs" />
+    <Compile Include="Setting\Setting.cs" />
+    <Compile Include="Setting\SettingList.cs" />
+    <Compile Include="Setting\SystemData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

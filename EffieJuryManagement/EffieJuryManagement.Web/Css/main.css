@@ -1,0 +1,46 @@
+﻿@font-face {
+	font-family:"AvantGarde Bold";
+	src:url("webfontkit/AvantGardeBold.eot?#iefix");
+	src:url("webfontkit/AvantGardeBold.eot?#iefix")
+	format("eot"),url("webfontkit/AvantGardeBold.woff")
+	format("woff"),url("webfontkit/AvantGardeBold.ttf")
+	format("truetype"),
+	url("webfontkit/AvantGardeBold.svg#AvantGardeBold")
+	format("svg");
+}
+@font-face{
+	font-family:"AvantGarde Book";
+	src:url("webfontkit/AvantGardeBook.eot?#iefix");
+	src:url("webfontkit/AvantGardeBook.eot?#iefix")
+	format("eot"),url("webfontkit/AvantGardeBook.woff")
+	format("woff"),url("webfontkit/AvantGardeBook.ttf")
+	format("truetype"),
+	url("webfontkit/AvantGardeBook.svg#AvantGardeBook")
+	format("svg");
+}
+@font-face{
+	font-family:"AvantGarde Demi";
+	src:url("webfontkit/AvantGardeDemi.eot?#iefix");
+	src:url("webfontkit/AvantGardeDemi.eot?#iefix")
+	format("eot"),url("webfontkit/AvantGardeDemi.woff")
+	format("woff"),url("webfontkit/AvantGardeDemi.ttf")
+	format("truetype"),
+	url("webfontkit/AvantGardeDemi.svg#AvantGardeDemi")
+	format("svg");
+}
+@font-face{
+	font-family:"AvantGarde Medium";
+	src:url("webfontkit/AvantGardeMedium.eot?#iefix");
+	src:url("webfontkit/AvantGardeMedium.eot?#iefix")
+	format("eot"),url("webfontkit/AvantGardeMedium.woff")
+	format("woff"),url("webfontkit/AvantGardeMedium.ttf")
+	format("truetype"),
+	url("webfontkit/AvantGardeMedium.svg#AvantGardeMedium")
+	format("svg");
+}
+
+body 
+{    
+   font-family:'AvantGarde Book', verdana, sans-serif;
+	font-size:14px;
+}

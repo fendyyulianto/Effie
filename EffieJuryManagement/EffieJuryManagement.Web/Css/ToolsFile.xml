@@ -1,0 +1,49 @@
+<root>
+
+  <tools>
+    <tool name="Bold"/>
+    <tool name="Italic"/>
+    <tool name="Underline"/>
+    <tool separator="true"/>
+    <tool name="JustifyLeft"/>
+    <tool name="JustifyCenter"/>
+    <tool name="JustifyRight"/>
+    <tool name="JustifyFull"/>
+    <tool separator="true"/>
+    <tool name="InsertOrderedList"/>
+    <tool name="InsertUnorderedList"/>
+    <tool name="Outdent"/>
+    <tool name="Indent"/>
+
+    <tool separator="true"/>
+    <tool name="Undo"/>
+    <tool name="Redo"/>
+    <tool name="InsertLink" />
+    <tool name="Unlink"/>
+    <tool name="InsertSymbol" />
+    
+    
+  </tools>
+  <tools>
+    <tool name="FontName"/>
+    <tool name="FontSize"/>
+  </tools>
+  <links>
+    <link name="telerik" href="http://www.telerik.com">
+      <link name="Products" href="http://www.telerik.com/products" />
+      <link name="Purchase" href="http://www.telerik.com/purchase" />
+      <link name="Support" href="http://www.telerik.com/support" />
+      <link name="Client.Net" href="http://www.telerik.com/clientnet" />
+    </link>
+    <link name="Microsoft">
+      <link name="Main Site" href="http://www.microsoft.com" />
+      <link name="MSDN Online" href="http://msdn.microsoft.com" />
+      <link name="Windows Update" href="http://windowsupdate.microsoft.com" />
+    </link>
+    <link name="Search Engines">
+      <link name="Google" href="http://www.google.com" />
+      <link name="Yahoo" href="http://www.yahoo.com" />
+      <link name="AltaVista" href="http://www.altavista.com" />
+    </link>
+  </links>
+</root>
