@@ -74,7 +74,7 @@
                             <td>
                                <a href="http://ifektiv.com/" target="_blank">
                                     <img src="../images/ifektiv logo_bw.png?sfvrsn=2"
-                                        alt="logo-CAAAA" title="The Confederation of Asian Advertising Agency Associations" /></a><br />
+                                        alt="logo-CAAAA" title="The Confederation of Asian Advertising Agency Associations"  style="width: 120px;"/></a><br />
                             </td>
                             <%--<td>
                                 <img src="http://www.apaceffie.com/images/default-source/sponsors/logo-tenasia.png?sfvrsn=2"

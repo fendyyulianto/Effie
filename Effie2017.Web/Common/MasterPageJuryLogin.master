@@ -63,7 +63,7 @@
             </div>--%>
 
             <div class="footer-left">
-                <table> <tbody> <tr> <td style="width: 160px;">Organised by:</td> <%--<td style="width: 240px;">Co-organised &amp; Managed by:</td>--%> </tr> <tr> <td>&nbsp;</td> <td>&nbsp;</td> </tr> <tr> <td><a href="http://ifektiv.com/" target="_blank"><img  src="../images/ifektiv logo_bw.png?sfvrsn=2" alt="logo-CAAAA" title="The Confederation of Asian Advertising Agency Associations" /></a><br /> </td> <%--<td><img src="../images/logo-tenasia.png?sfvrsn=2" alt="logo-tenasia" title="Tenasia" />&nbsp;</td>--%> </tr> </tbody> </table>
+                <table> <tbody> <tr> <td style="width: 160px;">Organised by:</td> <%--<td style="width: 240px;">Co-organised &amp; Managed by:</td>--%> </tr> <tr> <td>&nbsp;</td> <td>&nbsp;</td> </tr> <tr> <td><a href="http://ifektiv.com/" target="_blank"><img style="width: 120px;" src="../images/ifektiv logo_bw.png?sfvrsn=2" alt="logo-CAAAA" title="The Confederation of Asian Advertising Agency Associations" /></a><br /> </td> <%--<td><img src="../images/logo-tenasia.png?sfvrsn=2" alt="logo-tenasia" title="Tenasia" />&nbsp;</td>--%> </tr> </tbody> </table>
 		    </div>
 		    <div class="footer-right">
                 <ul class="sfNavHorizontal sfNavList" style="width:218px;">

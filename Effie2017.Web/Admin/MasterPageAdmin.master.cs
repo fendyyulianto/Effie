@@ -98,6 +98,15 @@ public partial class Admin_MasterPageAdmin : System.Web.UI.MasterPage
             liJuryList.Visible = true;
             liGalaOrderList.Visible = true;
         }
+
+        else if (admin.Access == "AF")
+        {
+            liEntrySubmittedList.Visible = true; //1
+            liEntryPendingList.Visible = true; //2
+            liInvoiceList.Visible = true; //3
+            liAdhocInvoiceList.Visible = true; //4
+            liGalaOrderList.Visible = true; //5
+        }
         else if (admin.Access == "ST")
         {
             //liEntryList.Visible = true;

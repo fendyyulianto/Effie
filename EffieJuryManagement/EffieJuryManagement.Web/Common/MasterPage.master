@@ -18,6 +18,19 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
+    <style>
+  .logo a{
+	position: absolute;
+	background:  url(../images/logo-apaceffie.png?v=1) no-repeat;
+	width: 200px;
+	height: 76px;
+  }
+  .masthead-right{
+	width: 100%;
+  }
+  .nav1{margin-top: unset;}
+  .masthead{height: 120px;}
+</style>
 <body>
     <form id="form1" runat="server">
     <div class="wrapper">
@@ -91,7 +104,7 @@
                             <td>
                                <a href="http://ifektiv.com/" target="_blank">
                                     <img src="../images/ifektiv logo_bw.png?sfvrsn=2"
-                                        alt="logo-CAAAA" title="The Confederation of Asian Advertising Agency Associations" /></a><br />
+                                        alt="logo-CAAAA" title="The Confederation of Asian Advertising Agency Associations"  style="width: 120px;" /></a><br />
                             </td>
                            <%-- <td>
                                 <img src="http://www.apaceffie.com/images/default-source/sponsors/logo-tenasia.png?sfvrsn=2"

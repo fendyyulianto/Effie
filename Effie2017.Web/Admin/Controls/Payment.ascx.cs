@@ -194,7 +194,7 @@ public partial class Admin_Controls_Payment : System.Web.UI.UserControl
                     else if (rblPayment.SelectedValue == "AllowUpload")
                     {
                         // Partial payment
-                        Email.SendAllowUploadEmailOthers(Registration.GetRegistration(list[0].RegistrationId), paymentGroupId, "");
+                        Email.SendCompletedPaymentEmailOthers(Registration.GetRegistration(list[0].RegistrationId), paymentGroupId, "");
                         GeneralFunction.UpdateEntryLastSendPaidEmailDate(paymentGroupId);
                     }
                 }

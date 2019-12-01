@@ -50,6 +50,7 @@ public partial class Admin_Admin : PageSecurity_Admin
         ddlAdminType.Items.Add(new ListItem("Admin Jury Only", "AD3"));
         ddlAdminType.Items.Add(new ListItem("Admin", "AD"));
         ddlAdminType.Items.Add(new ListItem("Super Admin (Finance)", "SF"));
+        ddlAdminType.Items.Add(new ListItem("Admin Finance", "AF"));
         ddlAdminType.Items.Add(new ListItem("Super Admin", "SA"));
         ddlAdminType.Items.Insert(0, new ListItem("Select access type", ""));
     }

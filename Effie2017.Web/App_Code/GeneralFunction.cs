@@ -4319,51 +4319,49 @@ public class GeneralFunction
         if (reg.IsCAAAA || reg.IsAPEP || reg.IsEProg) isPreferential = true;
         //if (reg.IsAFAA) isSpecial = true;
 
-        // Preferential is cheaper so calculate the special first
-        //if (isSpecial)
-        //{
-        //    if (IsOnTimeNow()) 
-        //        price = 99999;
-        //    else if (IsExtendedNow()) 
-        //        price = 99999;
-        //    else
-        //        price = 99999;
-        //}
+    // Preferential is cheaper so calculate the special first
+    //if (isSpecial)
+    //{
+    //    if (IsOnTimeNow()) 
+    //        price = 99999;
+    //    else if (IsExtendedNow()) 
+    //        price = 99999;
+    //    else
+    //        price = 99999;
+    //}
 
-        //if (isPreferential)
-        //{
-        //    if (IsOnTimeNow()) 
-        //        price = 790;
-        //    else if (IsExtendedNow()) 
-        //        price = 890;
-        //    else co        //        price = 990;
+    //if (isPreferential)
+    //{
+    //    if (IsOnTimeNow()) 
+    //        price = 790;
+    //    else if (IsExtendedNow()) 
+    //        price = 890;
+    //    else co        //        price = 990;
 
-        //    return price;
-        //}
+    //    return price;
+    //}
 
-        //if (reg.IsPromo1)
-        //{
-        //    if (IsOnTimeNow())
-        //        price = 930;
-        //    else if (IsExtendedNow())
-        //        price = 930;
-        //    else
-        //        price = 1030;
+    //if (reg.IsPromo1)
+    //{
+    //    if (IsOnTimeNow())
+    //        price = 930;
+    //    else if (IsExtendedNow())
+    //        price = 930;
+    //    else
+    //        price = 1030;
 
-        //    return price;
-        //}
-
-
-
+    //    return price;
+    //}
+    
         // Normal
         if (IsOnTimeNow(entry.DateSubmitted))
-            price = 990;
+            price = decimal.Parse(ConfigurationSettings.AppSettings["Price1"]);
         else if (IsExtendedNow(entry.DateSubmitted))
-            price = 1340;
+            price = decimal.Parse(ConfigurationSettings.AppSettings["Price2"]);
         else if (IsExtended_2_Now(entry.DateSubmitted))
-            price = 1690;
+            price = decimal.Parse(ConfigurationSettings.AppSettings["Price3"]);
         else
-            price = 1990;
+            price = decimal.Parse(ConfigurationSettings.AppSettings["Price4"]);
 
         return price;
     }

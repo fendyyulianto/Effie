@@ -15,6 +15,7 @@ public static class AdminAccessType
 {
     public const string SuperAdmin = "SA";
     public const string SuperAdminFinance = "SF";
+    public const string AdminFinance = "AF";
     public const string Admin = "AD";
     public const string Admin2 = "AD2"; //ADMIN NO JURY
     public const string ReadOnlyAdmin = "RO";
@@ -57,6 +58,15 @@ public class Security
         }
         return false;
     }
+    public static bool IsRoleAdminFinance()
+    {
+        Administrator admin = GetAdminLoginSession();
+        if (admin != null && admin.Access == AdminAccessType.AdminFinance)
+        {
+            return true;
+        }
+        return false;
+    }
     public static bool IsRoleSuperAdminFinance()
     {
         Administrator admin = GetAdminLoginSession();
@@ -84,6 +94,7 @@ public class Security
         }
         return false;
     }
+    
     public static bool IsRoleAdmin2() //ADMIN NO JURY
     {
         Administrator admin = GetAdminLoginSession();
@@ -181,6 +192,7 @@ public class Security
     {
         if (IsRoleSuperAdmin()) return;
         if (IsRoleSuperAdminFinance()) return;
+        if (IsRoleAdminFinance()) return;
         if (IsRoleAdmin()) return;
         if (IsRoleAdmin2()) return;
 
@@ -204,7 +216,7 @@ public class Security
     public static void SecureControlByHiding(WebControl wc, string function)
     {
         if (IsRoleSuperAdmin()) return;
-        if (IsRoleSuperAdminFinance() && function == "EXPORT") return;
+        if ((IsRoleSuperAdminFinance() || IsRoleAdminFinance()) && function == "EXPORT") return;
         if (IsRoleAdmin() && (function != "EXPORT" && function != "FlagReasonAdd")) return;
         if (IsRoleAdmin2() && (function != "EXPORT" && function != "FlagReasonAdd" && function != "AddJudge")) return;
 

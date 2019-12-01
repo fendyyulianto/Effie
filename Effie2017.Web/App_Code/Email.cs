@@ -402,7 +402,7 @@ public class Email
     public static int SendCompletedGalaPaymentEmailOthers(GalaOrder go)
     {
         int rtnValue = 0;
-        string emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "GalaEmailPaidOthers.htm");
+        string emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "GalaEmailPaidPayPal.htm");
 
         emailformat = emailformat.Replace("#FIRSTNAME#", go.PayFirstname);
         emailformat = emailformat.Replace("#LASTNAME#", go.PayLastname);
@@ -587,13 +587,7 @@ public class Email
         // invoice
         MemoryStream ms = RegAttachment.GenerateGroupReceipt(reg, paymentGroupId);
         Attachment attachment = new Attachment(ms, "Invoice.pdf");
-        //attachmentCollection.Add(attachment);
 
-        // Removed details attachment
-        //// details 
-        //MemoryStream ms2 = RegAttachment.GenerateEntryDetailsSummary(reg, paymentGroupId);
-        //Attachment attachment2 = new Attachment(ms2, "EntryDetails.pdf");
-        //attachmentCollection.Add(attachment2);
         string subject = "APAC Effie " + GeneralFunction.EffieEventYear() + " Payment Confirmation/Upload of Entry Materials";
         attachments = attachmentCollection;
         rtnValue = SendMail(reg.Email, System.Configuration.ConfigurationSettings.AppSettings["AdminEmail"], ConfigurationSettings.AppSettings["AdminEmailName"], "", System.Configuration.ConfigurationSettings.AppSettings["BccFinance"], subject, emailformat, true, attachments, null);
@@ -601,64 +595,59 @@ public class Email
         return rtnValue;
     }
     
-    public static int SendAllowUploadEmailOthers(Registration reg, Guid paymentGroupId, string invoicenum)
-    {
-        int rtnValue = 0;
-        string emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "NewEntryEmailAllowUploadOthers.htm");
+    //public static int SendAllowUploadEmailOthers(Registration reg, Guid paymentGroupId, string invoicenum)
+    //{
+    //    int rtnValue = 0;
+    //    string emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "NewEntryEmailPaidOthers.htm");
 
-        emailformat = emailformat.Replace("#FIRSTNAME#", reg.Firstname);
-        emailformat = emailformat.Replace("#LASTNAME#", reg.Lastname);
-        emailformat = emailformat.Replace("#INVOICE#", invoicenum);
-        emailformat = emailformat.Replace("#ENTRYDATA#", GeneralFunction.GetHTMLTableFromPaymentGroup(paymentGroupId));
-        emailformat = emailformat.Replace("#URL#", ConfigurationSettings.AppSettings["WebURL"]);
-        emailformat = emailformat.Replace("#DateDependent#", GeneralFunction.GetDateDepentent(paymentGroupId));
+    //    emailformat = emailformat.Replace("#FIRSTNAME#", reg.Firstname);
+    //    emailformat = emailformat.Replace("#LASTNAME#", reg.Lastname);
+    //    emailformat = emailformat.Replace("#INVOICE#", invoicenum);
+    //    emailformat = emailformat.Replace("#ENTRYDATA#", GeneralFunction.GetHTMLTableFromPaymentGroup(paymentGroupId));
+    //    emailformat = emailformat.Replace("#URL#", ConfigurationSettings.AppSettings["WebURL"]);
+    //    emailformat = emailformat.Replace("#DateDependent#", GeneralFunction.GetDateDepentent(paymentGroupId));
 
-        // Attachment
-        AttachmentCollection attachments = null;
-        AttachmentCollection attachmentCollection = new MailMessage().Attachments;
+    //    // Attachment
+    //    AttachmentCollection attachments = null;
+    //    AttachmentCollection attachmentCollection = new MailMessage().Attachments;
 
-        // invoice
-        MemoryStream ms = RegAttachment.GenerateGroupReceipt(reg, paymentGroupId);
-        Attachment attachment = new Attachment(ms, "Invoice.pdf");
-        attachmentCollection.Add(attachment);
+    //    // invoice
+    //    MemoryStream ms = RegAttachment.GenerateGroupReceipt(reg, paymentGroupId);
+    //    Attachment attachment = new Attachment(ms, "Invoice.pdf");
+    //    attachmentCollection.Add(attachment);
 
-        // Removed details attachment
-        //// details 
-        //MemoryStream ms2 = RegAttachment.GenerateEntryDetailsSummary(reg, paymentGroupId);
-        //Attachment attachment2 = new Attachment(ms2, "EntryDetails.pdf");
-        //attachmentCollection.Add(attachment2);
-        string subject = "APAC Effie " + GeneralFunction.EffieEventYear() + " Upload of Entry Materials";
-        attachments = attachmentCollection;
-        rtnValue = SendMail(reg.Email, System.Configuration.ConfigurationSettings.AppSettings["AdminEmail"], ConfigurationSettings.AppSettings["AdminEmailName"], "", System.Configuration.ConfigurationSettings.AppSettings["BccFinance"], subject, emailformat, true, attachments, null);
+    //    string subject = "APAC Effie " + GeneralFunction.EffieEventYear() + " Upload of Entry Materials";
+    //    attachments = attachmentCollection;
+    //    rtnValue = SendMail(reg.Email, System.Configuration.ConfigurationSettings.AppSettings["AdminEmail"], ConfigurationSettings.AppSettings["AdminEmailName"], "", System.Configuration.ConfigurationSettings.AppSettings["BccFinance"], subject, emailformat, true, attachments, null);
 
-        return rtnValue;
-    }
+    //    return rtnValue;
+    //}
     
-    public static int SendPaymentEmailPaypal(Registration reg, Guid paymentGroupId, string invoicenum)
-    {
-        int rtnValue = 0;
-        string emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "PaymentEmailPaypal.htm");
+    //public static int SendPaymentEmailPaypal(Registration reg, Guid paymentGroupId, string invoicenum)
+    //{
+    //    int rtnValue = 0;
+    //    string emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "PaymentEmailPaypal.htm");
 
-        emailformat = emailformat.Replace("#FIRSTNAME#", reg.Firstname);
-        emailformat = emailformat.Replace("#LASTNAME#", reg.Lastname);
-        emailformat = emailformat.Replace("#INVOICE#", invoicenum);
-        emailformat = emailformat.Replace("#ENTRYDATA#", GeneralFunction.GetHTMLTableFromPaymentGroup(paymentGroupId));
-        //emailformat = emailformat.Replace("#URL#", ConfigurationSettings.AppSettings["WebURL"]);
-        //emailformat = emailformat.Replace("#DateDependent#", GeneralFunction.GetDateDepentent(paymentGroupId));
+    //    emailformat = emailformat.Replace("#FIRSTNAME#", reg.Firstname);
+    //    emailformat = emailformat.Replace("#LASTNAME#", reg.Lastname);
+    //    emailformat = emailformat.Replace("#INVOICE#", invoicenum);
+    //    emailformat = emailformat.Replace("#ENTRYDATA#", GeneralFunction.GetHTMLTableFromPaymentGroup(paymentGroupId));
+    //    //emailformat = emailformat.Replace("#URL#", ConfigurationSettings.AppSettings["WebURL"]);
+    //    //emailformat = emailformat.Replace("#DateDependent#", GeneralFunction.GetDateDepentent(paymentGroupId));
 
-        // Attachment
-        AttachmentCollection attachments = null;
-        AttachmentCollection attachmentCollection = new MailMessage().Attachments;
+    //    // Attachment
+    //    AttachmentCollection attachments = null;
+    //    AttachmentCollection attachmentCollection = new MailMessage().Attachments;
 
-        // invoice
-        MemoryStream ms = RegAttachment.GenerateGroupReceipt(reg, paymentGroupId);
-        Attachment attachment = new Attachment(ms, "Invoice.pdf");
-        attachmentCollection.Add(attachment);
-        string subject = "APAC Effie " + GeneralFunction.EffieEventYear() + " Entry Submission/Invoice " + invoicenum;
-        attachments = attachmentCollection;
-        rtnValue = SendMail(reg.Email, System.Configuration.ConfigurationSettings.AppSettings["AdminEmail"], ConfigurationSettings.AppSettings["AdminEmailName"], "", System.Configuration.ConfigurationSettings.AppSettings["BccFinance"], subject, emailformat, true, attachments, null);
-        return rtnValue;
-    }
+    //    // invoice
+    //    MemoryStream ms = RegAttachment.GenerateGroupReceipt(reg, paymentGroupId);
+    //    Attachment attachment = new Attachment(ms, "Invoice.pdf");
+    //    attachmentCollection.Add(attachment);
+    //    string subject = "APAC Effie " + GeneralFunction.EffieEventYear() + " Entry Submission/Invoice " + invoicenum;
+    //    attachments = attachmentCollection;
+    //    rtnValue = SendMail(reg.Email, System.Configuration.ConfigurationSettings.AppSettings["AdminEmail"], ConfigurationSettings.AppSettings["AdminEmailName"], "", System.Configuration.ConfigurationSettings.AppSettings["BccFinance"], subject, emailformat, true, attachments, null);
+    //    return rtnValue;
+    //}
 
     public static int SendNewEntryPendingPaymentChequeEmail(Registration reg, Guid paymentGroupId, string invoicenum)
     {
@@ -770,7 +759,7 @@ public class Email
     public static int SendAdhocReOpenPaymentEmailConfirm(Registration reg, Guid paymentGroupId, string invoicenum)
     {
         int rtnValue = 0;
-        string emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "ReopenEmailAdhocConfirm.htm");
+        string emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "PaymentEmailAdhoc.htm");
 
         string subject = "APAC Effie " + GeneralFunction.EffieEventYear() + " - Reopening Request / Invoice " + invoicenum;
 
@@ -842,7 +831,7 @@ public class Email
     public static int SendAdhocOtherRequestPaymentEmailConfirm(Registration reg, Guid paymentGroupId, string invoicenum)
     {
         int rtnValue = 0;
-        string emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "OtherRequestEmailAdhocConfirm.htm");
+        string emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "PaymentEmailAdhocConfirm.htm");
 
         string subject = "APAC Effie " + GeneralFunction.EffieEventYear() + " - Entry Request ";
 
@@ -963,59 +952,7 @@ public class Email
 
         return rtnValue;
     }
-
-    public static int SendReminderPendingSubmissionEmail(Registration reg)
-    {
-        int rtnValue = 0;
-        string emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "ReminderEmailPendingSubmission.htm");
-        emailformat = emailformat.Replace("#FIRSTNAME#", reg.Firstname);
-        emailformat = emailformat.Replace("#LASTNAME#", reg.Lastname);
-        emailformat = emailformat.Replace("#URL#", ConfigurationSettings.AppSettings["WebURL"]);
-
-        rtnValue = SendMail(reg.Email, System.Configuration.ConfigurationSettings.AppSettings["AdminEmail"], ConfigurationSettings.AppSettings["AdminEmailName"], "", "", "Reminder for Entry Submission", emailformat, true, null, null);
-
-        return rtnValue;
-    }
-
-    public static int SendReminderPendingPaymentEmail(Registration reg, Guid paymentGroupId, string invoicenum)
-    {
-        int rtnValue = 0;
-        string emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "ReminderEmailPendingPayment.htm");
-        emailformat = emailformat.Replace("#FIRSTNAME#", reg.Firstname);
-        emailformat = emailformat.Replace("#LASTNAME#", reg.Lastname);
-        emailformat = emailformat.Replace("#INVOICE#", invoicenum);
-        emailformat = emailformat.Replace("#ENTRYDATA#", GeneralFunction.GetHTMLTableFromPaymentGroup(paymentGroupId));
-        emailformat = emailformat.Replace("#URL#", ConfigurationSettings.AppSettings["WebURL"]);
-
-        // Attachment
-        AttachmentCollection attachments = null;
-        AttachmentCollection attachmentCollection = new MailMessage().Attachments;
-
-        // invoice
-        MemoryStream ms = RegAttachment.GenerateGroupReceipt(reg, paymentGroupId);
-        Attachment attachment = new Attachment(ms, "Invoice.pdf");
-        attachmentCollection.Add(attachment);
-
-        attachments = attachmentCollection;
-        rtnValue = SendMail(reg.Email, System.Configuration.ConfigurationSettings.AppSettings["AdminEmail"], ConfigurationSettings.AppSettings["AdminEmailName"], "", "", "Payment Reminder for Entry Submission – Invoice No " + invoicenum, emailformat, true, attachments, null);
-
-        return rtnValue;
-    }
-
-    public static int SendReminderPendingUploadCompletionEmail(Registration reg, Entry entry)
-    {
-        int rtnValue = 0;
-        string emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "ReminderEmailPendingUploadCompletion.htm");
-        emailformat = emailformat.Replace("#FIRSTNAME#", reg.Firstname);
-        emailformat = emailformat.Replace("#LASTNAME#", reg.Lastname);
-        emailformat = emailformat.Replace("#ENTRYDATA#", GeneralFunction.GetHTMLTableFromEntry(entry));
-        emailformat = emailformat.Replace("#URL#", ConfigurationSettings.AppSettings["WebURL"]);
-
-        rtnValue = SendMail(reg.Email, System.Configuration.ConfigurationSettings.AppSettings["AdminEmail"], ConfigurationSettings.AppSettings["AdminEmailName"], "", "", "Materials Upload Reminder for Entry Submission – Entry ID " + entry.Serial, emailformat, true, null, null);
-
-        return rtnValue;
-    }
-
+    
     public static int SendPendingPaymentAdhocChequeEmailConfirm(Registration reg, Guid paymentGroupId, string invoicenum, bool isReminder)
     {
         int rtnValue = 0;
@@ -1031,9 +968,9 @@ public class Email
             admin = Security.GetAdminLoginSession();
             if (admin != null) //ADMIN SELECTS THE PAYMENT MODE.
             {
-                emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "PaymentEmailAdhocChequeConfirmAdmin.htm");
+                emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "PaymentEmailAdhocChequeAdmin.htm");
                 if (!GeneralFunction.IsAdhocReOpen(reg.Id, paymentGroupId))
-                    emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "OtherPaymentEmailAdhocChequeConfirmAdmin.htm");
+                    emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "OtherPaymentEmailAdhocChequeConfirm.htm");
             }
         }
         catch { }
@@ -1080,7 +1017,7 @@ public class Email
         int rtnValue = 0;
         string subject = string.Empty;
 
-        string emailformat = ""; // ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "PaymentEmailAdhocChequeConfirm.htm");
+        string emailformat = ""; 
         if (!GeneralFunction.IsAdhocReOpen(reg.Id, paymentGroupId))
             emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "OtherPaymentEmailAdhocChequeConfirm.htm");
         else
@@ -1137,7 +1074,7 @@ public class Email
     public static int SendPendingPaymentAdhocBankTransferEmailConfirm(Registration reg, Guid paymentGroupId, string invoicenum, bool isReminder)
     {
         int rtnValue = 0;
-        string emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "PaymentEmailAdhocBankTransfer.htm");
+        string emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "PaymentEmailAdhocBankTransferAdmin.htm"); //NOT USE
         //if (!GeneralFunction.IsAdhocReOpen(reg.Id, paymentGroupId))
         //    emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "OtherPaymentEmailAdhocBankTransfer.htm");
 
@@ -1150,7 +1087,7 @@ public class Email
             {
                 emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "PaymentEmailAdhocBankTransferConfirmAdmin.htm");
                 if (!GeneralFunction.IsAdhocReOpen(reg.Id, paymentGroupId))
-                    emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "OtherPaymentEmailAdhocBankTransferConfirmAdmin.htm");
+                    emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "OtherPaymentEmailAdhocBankTransferConfirm.htm");
             }
         }
         catch { }
@@ -1193,7 +1130,7 @@ public class Email
     public static int SendPendingPaymentAdhocBankTransferEmail(Registration reg, Guid paymentGroupId, string invoicenum, bool isReminder)
     {
         int rtnValue = 0;
-        string emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "PaymentEmailAdhocBankTransferConfirm.htm");
+        string emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "PaymentEmailAdhocBankTransferAdmin.htm");
         if (!GeneralFunction.IsAdhocReOpen(reg.Id, paymentGroupId))
             emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "OtherPaymentEmailAdhocBankTransferConfirm.htm");
 
@@ -1252,24 +1189,21 @@ public class Email
     public static int SendPendingPaymentAdhocPaypalEmailConfirm(Registration reg, Guid paymentGroupId, string invoicenum, bool isReminder)
     {
         int rtnValue = 0;
-        string emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "PaymentEmailAdhocPaypal.htm");
-        //if (!GeneralFunction.IsAdhocReOpen(reg.Id, paymentGroupId))
-        //    emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "OtherPaymentEmailAdhocPaypal.htm");
+        string emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "PaymentEmailAdhoc.htm");
 
         string subject = string.Empty;
 
-        Administrator admin = null;
-        try
-        {
-            admin = Security.GetAdminLoginSession();
-            if (admin != null) //ADMIN SELECTS THE PAYMENT MODE.
-            {
-                emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "PaymentEmailAdhocPaypalConfirmAdmin.htm");
-                //if (!GeneralFunction.IsAdhocReOpen(reg.Id, paymentGroupId))
-                //    emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "OtherPaymentEmailAdhocPaypalConfirmAdmin.htm");
-            }
-        }
-        catch { }
+        //Administrator admin = null;
+        //try
+        //{
+        //    admin = Security.GetAdminLoginSession();
+        //    if (admin != null) //ADMIN SELECTS THE PAYMENT MODE.
+        //    {
+        //        emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "PaymentEmailAdhocPaypalConfirmAdmin.htm");
+               
+        //    }
+        //}
+        //catch { }
 
         if (isReminder)
         {
@@ -1312,17 +1246,17 @@ public class Email
     public static int SendPendingPaymentAdhocPaypalEmail(Registration reg, Guid paymentGroupId, string invoicenum, bool isReminder)
     {
         int rtnValue = 0;
-        string emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "PaymentEmailAdhocPaypalConfirm.htm");
+        string emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "PaymentEmailAdhocConfirm.htm");
 
         Administrator admin = null;
-        try {
-            admin = Security.GetAdminLoginSession();
-            if (admin != null)
-            {
-                emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "PaymentEmailAdhocPaypalAdmin.htm");
-            }
-        }
-        catch { }
+        //try {
+        //    admin = Security.GetAdminLoginSession();
+        //    if (admin != null)
+        //    {
+        //        emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "PaymentEmailAdhocPaypalAdmin.htm");
+        //    }
+        //}
+        //catch { }
         
         string subject = string.Empty;
 
@@ -1467,6 +1401,7 @@ public class Email
         
         string mailUsername = System.Configuration.ConfigurationSettings.AppSettings["MailUsername"];
         string mailPassword = System.Configuration.ConfigurationSettings.AppSettings["MailPassword"];
+        string ExtendSubject = System.Configuration.ConfigurationManager.AppSettings["ExtendSubject"];
 
         if (mailTo.Trim() == "") return -1;
 
@@ -1501,7 +1436,7 @@ public class Email
         #endregion
 
 
-        msg.Subject = subject;
+        msg.Subject = ExtendSubject + subject;
         msg.Body = body;
         if (IsHTML == true)
             msg.IsBodyHtml = true;
@@ -1550,6 +1485,10 @@ public class Email
     {
         int rtnValue = 0;
 
+        string mailUsername = System.Configuration.ConfigurationSettings.AppSettings["MailUsername"];
+        string mailPassword = System.Configuration.ConfigurationSettings.AppSettings["MailPassword"];
+        string ExtendSubject = System.Configuration.ConfigurationManager.AppSettings["ExtendSubject"];
+
         if (mailTo.Trim() == "") return -1;
 
         MailMessage msg = new MailMessage();
@@ -1571,7 +1510,7 @@ public class Email
         }
 
 
-        msg.Subject = subject;
+        msg.Subject = ExtendSubject + subject;
         msg.Body = body;
         if (IsHTML == true)
             msg.IsBodyHtml = true;
@@ -1594,6 +1533,16 @@ public class Email
         try
         {
             SmtpClient client = new SmtpClient();
+            //client.Host = host;
+            //client.Port = port;
+            if (!String.IsNullOrEmpty(mailUsername) && !String.IsNullOrEmpty(mailPassword))
+            {
+                var networkCredential = new NetworkCredential(mailUsername, mailPassword);
+                client.UseDefaultCredentials = false;
+                client.Credentials = networkCredential;
+            }
+
+            //client.Credentials
             client.Send(msg);
         }
         catch (Exception e)

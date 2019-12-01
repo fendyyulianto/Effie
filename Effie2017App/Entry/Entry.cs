@@ -2301,7 +2301,7 @@ namespace Effie2017.App
             //
             // Permission
             //
-            ValidationRules.AddRule(CommonRules.StringMaxLength, new CommonRules.MaxLengthRuleArgs("Permission", 10));
+            ValidationRules.AddRule(CommonRules.StringMaxLength, new CommonRules.MaxLengthRuleArgs("Permission", 50));
             //
             // Name
             //

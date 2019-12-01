@@ -727,34 +727,6 @@ public partial class Admin_EntryList : PageSecurity_Admin
                 }
             }
         }
-
-        //bool isSelected = false;
-        //foreach (GridDataItem item in radGridEntry.Items)
-        //{
-        //    CheckBox chkbox = (CheckBox)item.FindControl("chkbox");
-        //    if (chkbox.Checked)
-        //    {
-        //        Entry entry = Entry.GetEntry(new Guid(item["Id"].Text));
-        //        Registration reg = Registration.GetRegistration(entry.RegistrationId);
-        //        Email.SendReminderPendingUploadCompletionEmail(reg, entry);
-        //        isSelected = true;
-
-        //        // save the last sent date
-        //        if (((Button)sender).CommandName == "upload") entry.LastSendUploadReminderEmailDateString = DateTime.Now.ToString();
-        //        if (((Button)sender).CommandName == "completion") entry.LastSendCompletionReminderEmailDateString = DateTime.Now.ToString();
-        //        entry.Save();
-        //    }
-        //    chkbox.Checked = false; // unchecked it
-        //}
-
-        //if (!isSelected)
-        //    lblError.Text = "Select at least 1 entry to send email.";
-        //else
-        //{
-        //    lblError.Text = "Email sent.";
-        //    BindGrid(false, string.Empty, GridSortOrder.None, true);
-        //}
-
     }
 
     public void PopulateTemplatePanel(Button pressedButton)

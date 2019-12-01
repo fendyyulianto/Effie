@@ -141,7 +141,7 @@
             APAC Effie Awards <br />
             c/o Ifektiv Pte Ltd <br />
             160 Robinson Road, #25-12 SBF Center<br/>
-            Singapore 188613
+            Singapore 068914
             </p>
             <br />
             <br />
