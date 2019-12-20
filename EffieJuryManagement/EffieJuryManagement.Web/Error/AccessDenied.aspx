@@ -16,7 +16,7 @@
                     <p>
                         &nbsp;</p>
                     <p>
-                        Feel free to reach out to us at <a href="mailto:apaceffie@tenasia.com.sg">apaceffie@tenasia.com.sg</a>
+                        Feel free to reach out to us at <a href="mailto:apaceffie@ifektiv.com">apaceffie@ifektiv.com</a>
                         if you have any questions.</p>
                 </div>
             </td>

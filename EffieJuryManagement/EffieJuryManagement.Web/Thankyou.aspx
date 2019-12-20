@@ -18,23 +18,24 @@
                             &nbsp;</p>
                         <p>
                             We will reach out with more details soon. In the meantime, feel free to reach out
-                            to us at <a href="mailto:judging.apaceffie@tenasia.com.sg">judging.apaceffie@tenasia.com.sg</a>
+                            to us at <a href="mailto:judging.apaceffie@ifektiv.com">judging.apaceffie@ifektiv.com</a>
                             if you have any questions.</p>
                     </asp:Panel>
                     <asp:Panel runat="server" ID="pnlReject" Visible="false">
                         <p>
-                            Thank you for your indication. We look forward to your involvement in APAC Effie
-                            in future.</p>
+                           <%-- Thank you for your indication. We look forward to your involvement in APAC Effie in future.--%>
+                            We note that you have declined our jury invitation for APAC Effie Awards 2020 but hope that you'll be able to join is in the future.  Thank you and have a great year ahead.
+                        </p>
                     </asp:Panel>
                     <asp:Panel runat="server" ID="pnlLock" Visible="false">
                         <p>
                             You have responded to this invitation. If you wish to change your response, kindly
-                            reach out to us at <a href="mailto:judging.apaceffie@tenasia.com.sg">judging.apaceffie@tenasia.com.sg</a>.</p>
+                            reach out to us at <a href="mailto:judging.apaceffie@ifektiv.com">judging.apaceffie@ifektiv.com</a>.</p>
                     </asp:Panel>
                     <asp:Panel runat="server" ID="pnlDeadline" Visible="false">
                         <p>
                             Deadline for accepting Invitation had been over. In the meantime, feel free to reach out
-                            to us at <a href="mailto:judging.apaceffie@tenasia.com.sg">judging.apaceffie@tenasia.com.sg</a>
+                            to us at <a href="mailto:judging.apaceffie@ifektiv.com">judging.apaceffie@ifektiv.com</a>
                             if you have any questions.</p>
                     </asp:Panel>
                 </div>

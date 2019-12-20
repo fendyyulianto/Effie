@@ -36,7 +36,8 @@ public partial class Main_EmailTemplateList : PageSecurity_Admin
     {
         EmailTemplateList emailTemplateList = EmailTemplateList.GetEmailTemplateList();
 
-        radGridJury.DataSource = emailTemplateList.Where(m => m.TemplateId != new Guid(Gen_GeneralUseValueList.GetGen_GeneralUseValueList("DefaultTemplateId")[0].Value) && !m.IsDelete).OrderByDescending(m => m.DateCreated).ToList();
+        radGridJury.DataSource = emailTemplateList.Where(m => m.TemplateId != new Guid(Gen_GeneralUseValueList.GetGen_GeneralUseValueList("DefaultTemplateId")[0].Value) && !m.IsDelete)
+            .OrderByDescending(m => m.DateCreated).ToList();
 
         if (needRebind) radGridJury.Rebind();
     }
