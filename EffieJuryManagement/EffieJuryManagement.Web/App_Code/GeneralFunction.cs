@@ -1713,6 +1713,7 @@ public class GeneralFunction
         list.Add("2017");
         list.Add("2018");
         list.Add("2019");
+        list.Add("2020");
 
         return list;
 

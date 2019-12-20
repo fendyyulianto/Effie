@@ -80,13 +80,13 @@
 
     <br/><br/><span style="font-weight: bold">Entry Form Instructions & Reminders<br /><br /></span>
         <span style="color: #a08647;font-weight: bold">ELIGIBILITY</span><br />
-        Your case must have run in the <span style="font-weight:bold">APAC region</span> at some point between <span style="font-weight:bold">July 1, 2017, to September 30, 2018</span>.<br/><br/>
+        Your case must have run in the <span style="font-weight:bold">APAC region</span> at some point between <span style="font-weight:bold">July 1, 2018, to August 31, 2019</span>.<br/><br/>
 
     <ul class="IconList">
         <li>All results must be isolated to the APAC region during this time period.</li>
-        <li><span style="font-weight:bold">At least 3 years of results is required.  </span>At minimum, your results must date back to 2016, and your entries must include results from the current competition year. </li>
+        <li><span style="font-weight:bold">At least 3 years of results is required.  </span>At minimum, your results must date back to <span style="font-weight:bold">31 August 2016</span>, and your entries must include results from the current competition year. </li>
         <li>Including results beyond the end of the eligibility period is grounds for disqualification. It is fine (and encouraged) to include prior year data for context, but it must be stated clearly.</li>
-        <li>Work may have continued running after September 30, 2018, <span style="font-weight:bold">but the results MUST be within the limits of the qualifying period.</span></li>
+        <li>Work may have continued running after <span style="font-weight:bold">August 2019 but the results MUST be within the limits of the qualifying period.</span></li>
     </ul>
 
     <br/><span style="color: #a08647; font-weight: bold">FORMATTTING REQUIREMENTS</span><br />
@@ -492,7 +492,7 @@
         <p class="efDesc">
             Note:
             <ul class="IconList">
-                  <li>Dates for all results presented here should be included to prevent confusion. At minimum, results must date back to 30 Sep 2016, and must include the current competition year’s results (1 Jul 2017 - 30 Sep 2018). Do not include results after 30 Sep 2018. </li>
+                  <li>Dates for all results presented here should be included to prevent confusion. At minimum, results must date back to 31 August 2016, and must include the current competition year’s results (1 July 2017 to 31 August 2019). Do not include results after 31 August 2019. </li>
                   <li>If presenting more than 3 years in this case, make sure to provide results here for the full spectrum of years that you are presenting in this case and in your creative material.</li>
             </ul>
         </p>
@@ -594,7 +594,7 @@
         </div>
         <span style="font-weight:bold">Select paid media expenditures (purchased and donated), not including agency fees or production costs, for the effort described in this entry over time.
         Given the ‘spirit’ of this question, use your judgment on what constitutes fees, production and the broad span that covers media – from donated space to activation costs. 
-        You must provide the budget for A) the initial year the case started (initial year is either the year your case started or at least 3 years ago), B) one interim year, and C) the current year (1 Jul 2016 to 30 Sep 2017).
+        You must provide the budget for A) the initial year the case started (initial year is either the year your case started or at least 3 years ago), B) one interim year, and C) the current year (July 1, 2018, to August 31, 2019).
         <br/><br/>Indicate the <u> percent change</u> for your budget for each year represented compared to the prior year. (e.g. 2% increase, same, etc.) If not known or not applicable, indicate this.
         </span><br/><br/>
         <span style="font-weight:bold;"> All amounts in USD.</span> 
@@ -846,7 +846,7 @@
         <span style="font-weight: bold"><%--Select all touchpoints used in the effort based on the options provided in the chart.  Within your response to Question 3, explain which touchpoints were integral in reaching your audience and why.--%>
 		Select all touchpoints used in the effort based on the options provided in the chart and the <u>% of the total budget</u> that was used for each communications touch point, which should equal 100% for each year. 
  		<br /><br />
-        You must provide information for A) the initial year your case started (initial year is either the year case started or at least 3 years ago, B) 1 interim year, and C), the current year (1 Jul 2017 to 30 Sep 2018).
+        You must provide information for A) the initial year your case started (initial year is either the year case started or at least 3 years ago, B) 1 interim year, and C), the current year (1 July 2018 to 31 August 2019).
             <br /><br />
         Within your response to Question 3, explain which touchpoints from the below list were integral to reaching your audience and why.  
 
@@ -919,7 +919,7 @@
         </div>
         <br/>
         <ul class="IconList">
-            <li>Feature work that ran in the <l style="color: #a08647;font-weight: bold;">initial year </l>(initial year is either: A) year case started or B) at least 3 years ago), <l style="color: #a08647;font-weight: bold;">at least one interim year</l> , and the  <span style="color: #a08647;font-weight: bold;">current competition year</span> (1 July 2017 – 30 September 2018).</li>
+            <li>Feature work that ran in the <l style="color: #a08647;font-weight: bold;">initial year </l>(initial year is either: A) year case started or B) at least 3 years ago), <l style="color: #a08647;font-weight: bold;">at least one interim year</l> , and the  <span style="color: #a08647;font-weight: bold;">current competition year</span> (1 July 2018 to 31 August 2019).</li>
             <li>Each example of the creative work must be <l style="color: #a08647;font-weight: bold;">labeled with the year it ran</l> .  Entries that do not label the year will be disqualified. Also label the year on images of creative uploaded for judging</li>
             <li>The Sustained Success Creative Video may be a <l style="color: #a08647;font-weight: bold;">maximum of 4 minutes</l>.  (All other categories – maximum 3 minutes.)</li>
             <li>On the creative materials, you must show at least one complete example of each touchpoint you mark on the Media Addendum Communications Touchpoints chart that was <l style="color: #a08647;font-weight: bold;">integral</l> to the effort’s success.  </li>

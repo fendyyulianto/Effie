@@ -552,7 +552,15 @@ public partial class Main_Entry : System.Web.UI.Page
         {
             // Normal user 
 
-            if (entry.IsNew || entry.Status == StatusEntry.Draft)
+            if (entry.Status == StatusEntry.Draft)
+            {
+
+                btnCancel.Visible = true;
+                btnNext.Visible = true;
+                btnSaveDraft.Visible = true;
+            }
+
+            if (entry.IsNew /*|| entry.Status == StatusEntry.Draft*/)
             {
                 btnCancel.Visible = true;
                 btnNext.Visible = true;

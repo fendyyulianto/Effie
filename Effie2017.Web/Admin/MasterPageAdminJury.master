@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=9" />
     <!-- InstanceBeginEditable name="doctitle" -->
-    <title>APAC Effie 2019</title>
+    <title>APAC Effie <%=GeneralFunction.EffieEventYear() %></title>
     <!-- InstanceEndEditable -->
     <link href="../css/TelerikDummy.css" rel="stylesheet" type="text/css" />
     <link href="../css/style-admin.css?v=2.1" rel="stylesheet" type="text/css" />

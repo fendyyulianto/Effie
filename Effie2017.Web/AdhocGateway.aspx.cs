@@ -38,6 +38,12 @@ public partial class AdhocGateway : System.Web.UI.Page
         //decimal amount = GeneralFunction.CalculateGroupTotalPriceFromCache();
         //amount += GeneralFunction.CalculateCreditFees(amount); // Add fees for PP payment
         decimal amount = GeneralFunction.TotalAdhocGrandAmount(payGroupId);
+        
+        bool IsTestPay = System.Configuration.ConfigurationManager.AppSettings["IsTestPay"].ToString() == "1";
+        if (IsTestPay)
+        {
+            amount = 0.01m;
+        }
         url.AppendFormat("&amount={0}", HttpUtility.UrlEncode(amount.ToString("0.00")));
 
 

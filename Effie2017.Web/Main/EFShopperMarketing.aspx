@@ -84,12 +84,12 @@
 
     <br/><br/><span style="font-weight: bold">Entry Form Instructions & Reminders<br /><br /></span>
         <span style="color: #a08647;font-weight: bold">ELIGIBILITY</span><br />
-        Your case must have run in the <span style="font-weight:bold">APAC region</span> at some point between <span style="font-weight:bold">July 1, 2017, to September 30, 2018</span>.<br/><br/>
+        Your case must have run in the <span style="font-weight:bold">APAC region</span> at some point between <span style="font-weight:bold">July 1, 2018, to August 31, 2019</span>.<br/><br/>
 
     <ul class="IconList">
         <li>All results must be isolated to the APAC region during this time period. </li>
         <li>Including results beyond the end of the eligibility period is grounds for disqualification. It is fine (and encouraged) to include prior year data for context, but it must be stated clearly.</li>
-        <li>Work may have started running before July 1, 2017 and it may continue running after September 30, 2018, <span style="font-weight:bold">but the results MUST be within the limits of the qualifying period.</span></li>
+        <li>Work may have started running before <span style="font-weight:bold">1 July 2018</span> and it may continue running after <span style="font-weight:bold">August 31, 2019</span>, but the results MUST be within the limits of the qualifying period.</li>
     </ul>
 
     <br/><span style="color: #a08647; font-weight: bold">FORMATTTING REQUIREMENTS</span><br />
@@ -598,7 +598,7 @@
     </ul>
     <br />
      <p class="efDesc">
-       Note: Only results that fall between 1 Jul 2017 - 30 Sep 2018 will be evaluated by judges. Dates for all results presented here should be included to prevent confusion. You may include data before your start date for context purposes, but do not include results after 30 Sep 2018.
+       Note: Only results that fall between 1 July 2018 - August 31, 2019 will be evaluated by judges. Dates for all results presented here should be included to prevent confusion. You may include data before your start date for context purposes, but do not include results after 31 August 2019.
     </p>
     <br />
     <asp:TextBox CssClass="TextCtm" ID="txtExplainWorkedA" runat="server" TextMode="MultiLine" placeholder="Provide Answer."></asp:TextBox>

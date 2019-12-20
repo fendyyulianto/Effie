@@ -1193,17 +1193,17 @@ public class Email
 
         string subject = string.Empty;
 
-        //Administrator admin = null;
-        //try
-        //{
-        //    admin = Security.GetAdminLoginSession();
-        //    if (admin != null) //ADMIN SELECTS THE PAYMENT MODE.
-        //    {
-        //        emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "PaymentEmailAdhocPaypalConfirmAdmin.htm");
-               
-        //    }
-        //}
-        //catch { }
+        Administrator admin = null;
+        try
+        {
+            admin = Security.GetAdminLoginSession();
+            if (admin != null) //ADMIN SELECTS THE PAYMENT MODE.
+            {
+                emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "PaymentEmailAdhocPaypalConfirmAdmin.htm");
+
+            }
+        }
+        catch { }
 
         if (isReminder)
         {

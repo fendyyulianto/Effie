@@ -133,6 +133,7 @@ public partial class Admin_EntryList : PageSecurity_Admin
         ddlCountry.Items.Insert(0, new ListItem("All", ""));
 
 
+        Security.SecureControlByHiding(btnReport, "EXPORT");
         Security.SecureControlByHiding(btnExport, "EXPORT");
         Security.SecureControlByHiding(btnExport2, "EXPORT");
     }

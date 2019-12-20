@@ -216,7 +216,7 @@ public class Security
     public static void SecureControlByHiding(WebControl wc, string function)
     {
         if (IsRoleSuperAdmin()) return;
-        if ((IsRoleSuperAdminFinance() || IsRoleAdminFinance()) && function == "EXPORT") return;
+        if ((IsRoleSuperAdminFinance()) && function == "EXPORT") return;
         if (IsRoleAdmin() && (function != "EXPORT" && function != "FlagReasonAdd")) return;
         if (IsRoleAdmin2() && (function != "EXPORT" && function != "FlagReasonAdd" && function != "AddJudge")) return;
 

@@ -177,7 +177,7 @@ public partial class Admin_AdhocInvoiceSummary : PageSecurity_Admin
             adInv.PayLastname = txtLastname.Text.Trim();
             adInv.PayContact = GeneralFunction.CreateContact(txtContactCountryCode.Text.Trim(), txtContactAreaCode.Text.Trim(), txtContactNumber.Text.Trim());
 
-            if (rblPayment.SelectedValue != PaymentType.PayPal)
+            //if (rblPayment.SelectedValue != PaymentType.PayPal)
                 adInv.PaymentMethod = rblPayment.SelectedValue;
 
             if(!string.IsNullOrEmpty(adInv.PaymentMethod))
@@ -311,17 +311,34 @@ public partial class Admin_AdhocInvoiceSummary : PageSecurity_Admin
                         catch { }
                     }
 
-                    if (!string.IsNullOrEmpty(Request.QueryString["Page"]) && (entrySelected != null))
+                    //if (rblPayment.SelectedValue == PaymentType.PayPal)
+                    //{
+                    //    // get the string of serial numbers
+                    //    string serials = "";
+                    //    EntryList list = EntryList.GetEntryList(adInv.PayGroupId, Guid.Empty, ""); // contains the pay group id
+                    //    foreach (Entry entry in list)
+                    //    {
+                    //        serials += entry.Serial + ",";
+                    //    }
+                    //    if (serials != "") serials = serials.Substring(0, serials.Length - 1);
+
+                    //    PayPal(serials);
+                    //}
+                    //else
                     {
-                        Response.Redirect("EntryProcessing.aspx?Page=Management");
-                    }
-                    else if (entrySelected != null)
-                    {
-                        Response.Redirect("EntryProcessing.aspx");
-                    }
-                    else
-                    {
-                        Response.Redirect("../Admin/AdhocInvoiceList.aspx");
+                        if (!string.IsNullOrEmpty(Request.QueryString["Page"]) && (entrySelected != null))
+                        {
+                            Response.Redirect("EntryProcessing.aspx?Page=Management");
+                        }
+                        else if (entrySelected != null)
+                        {
+                            Response.Redirect("EntryProcessing.aspx");
+                        }
+                        else
+                        {
+                            Response.Redirect("../Admin/AdhocInvoiceList.aspx");
+                        }
+                        //Response.Redirect("../Main/PendingPayment.aspx");
                     }
                 }
             }
@@ -411,5 +428,55 @@ public partial class Admin_AdhocInvoiceSummary : PageSecurity_Admin
         lbTotalFees.Text = grandtotal.ToString("N");
 
         lbGSTRate.Text = (decimal.Parse(ConfigurationManager.AppSettings["GSTRate"]) * 100).ToString("#");
-    }    
+    }
+
+    private void PayPal(string serials)
+    {
+        string url = ConfigurationManager.AppSettings["WebURL"] + "AdhocGateway.aspx?pgId=" + GeneralFunction.StringEncryption(payGroupId.ToString());
+
+        Response.Redirect(url);
+
+        #region Comment 
+        //StringBuilder url = new StringBuilder();
+
+        //string m_sPaypalBase = System.Configuration.ConfigurationManager.AppSettings["paypalBase"];
+        //string business = System.Configuration.ConfigurationManager.AppSettings["paypalEmail"];
+        //string cancelUrl = System.Configuration.ConfigurationManager.AppSettings["cancelPaymentUrl"];
+        //string returnUrl = System.Configuration.ConfigurationManager.AppSettings["successPaymentUrl"];
+        //string notifyUrl = System.Configuration.ConfigurationManager.AppSettings["notifyUrl"];
+
+        //url.Append(m_sPaypalBase);
+        //url.AppendFormat("&business={0}", HttpUtility.UrlEncode(business));
+        //url.AppendFormat("&item_name={0}", HttpUtility.UrlEncode("Payment for APAC Effie Ad Hoc"));  // for: " + serials));
+        //url.AppendFormat("&item_number={0}", HttpUtility.UrlEncode(payGroupId.ToString().Substring(0, 8).ToUpper())); // suppose to serial num, but there is possiblity of multiple entries per order????
+
+        ////decimal amount = GeneralFunction.CalculateGroupTotalPriceFromCache();
+        ////amount += GeneralFunction.CalculateCreditFees(amount); // Add fees for PP payment
+        //decimal amount = GeneralFunction.TotalEntryGrandAmount(payGroupId);
+        //url.AppendFormat("&amount={0}", HttpUtility.UrlEncode(amount.ToString("0.00")));
+        ////For testing of $0.01 
+        ////url.AppendFormat("&amount={0}", HttpUtility.UrlEncode("0.01"));
+        //url.AppendFormat("&currency_code={0}", HttpUtility.UrlEncode("SGD"));
+
+        //url.AppendFormat("&shipping={0}", HttpUtility.UrlEncode("0"));
+        //url.AppendFormat("&no_shipping={0}", HttpUtility.UrlEncode("0"));
+        //url.AppendFormat("&invoice={0}", "");
+
+        //string custom = payGroupId.ToString();
+        //url.AppendFormat("&custom={0}", HttpUtility.UrlEncode(custom));
+        //url.AppendFormat("&cancel_return={0}", HttpUtility.UrlEncode(cancelUrl));
+        //url.AppendFormat("&notify_url={0}", HttpUtility.UrlEncode(notifyUrl));
+        //url.AppendFormat("&return={0}", HttpUtility.UrlEncode(returnUrl + "?custom=" + payGroupId.ToString()));
+
+        //RawLog rawlog = RawLog.NewRawLog();
+        //rawlog.Type = 0; //send
+        //rawlog.Data = url.ToString();
+        //rawlog.DateString = DateTime.Now.ToString();
+
+        //if (rawlog.IsValid) rawlog.Save();
+
+
+        //Response.Redirect(url.ToString());
+        #endregion
+    }
 }

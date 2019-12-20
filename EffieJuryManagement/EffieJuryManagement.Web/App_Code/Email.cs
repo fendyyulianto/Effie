@@ -5,6 +5,7 @@ using System.IO;
 using System.Configuration;
 using EffieJuryManagementApp;
 using System.Text.RegularExpressions;
+using System.Net;
 /// <summary>
 /// Summary description for Email
 /// </summary>
@@ -201,6 +202,10 @@ public class Email
     {
         int rtnValue = 0;
 
+        string mailUsername = System.Configuration.ConfigurationSettings.AppSettings["MailUsername"];
+        string mailPassword = System.Configuration.ConfigurationSettings.AppSettings["MailPassword"];
+        string ExtendSubject = System.Configuration.ConfigurationManager.AppSettings["ExtendSubject"];
+
         if (mailTo.Trim() == "") return -1;
 
         MailMessage msg = new MailMessage();
@@ -231,7 +236,7 @@ public class Email
         }
 
 
-        msg.Subject = subject;
+        msg.Subject = ExtendSubject + subject;
         msg.Body = body;
         if (IsHTML == true)
             msg.IsBodyHtml = true;
@@ -254,6 +259,16 @@ public class Email
         try
         {
             SmtpClient client = new SmtpClient();
+            //client.Host = host;
+            //client.Port = port;
+            if (!String.IsNullOrEmpty(mailUsername) && !String.IsNullOrEmpty(mailPassword))
+            {
+                var networkCredential = new NetworkCredential(mailUsername, mailPassword);
+                client.UseDefaultCredentials = false;
+                client.Credentials = networkCredential;
+            }
+
+            //client.Credentials
             client.Send(msg);
         }
         catch (Exception e)

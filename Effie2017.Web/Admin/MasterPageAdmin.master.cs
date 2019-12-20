@@ -101,7 +101,7 @@ public partial class Admin_MasterPageAdmin : System.Web.UI.MasterPage
 
         else if (admin.Access == "AF")
         {
-            liEntrySubmittedList.Visible = true; //1
+            liEntryList.Visible = true; //1
             liEntryPendingList.Visible = true; //2
             liInvoiceList.Visible = true; //3
             liAdhocInvoiceList.Visible = true; //4
