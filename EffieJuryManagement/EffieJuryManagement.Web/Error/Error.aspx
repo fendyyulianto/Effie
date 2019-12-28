@@ -15,7 +15,7 @@
                     <p>
                         &nbsp;</p>
                     <p>
-                        Feel free to reach out to us at <a href="mailto:apaceffie@ifektiv.com">apaceffie@ifektiv.com</a>
+                        Feel free to reach out to us at <a href="mailto:judging.apaceffie@ifektiv.com">judging.apaceffie@ifektiv.com</a>
                         if you have any questions.</p>
                 </div>
             </td>
