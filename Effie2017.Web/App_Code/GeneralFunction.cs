@@ -2342,6 +2342,7 @@ public class GeneralFunction
         DateTime OnTimeCutOff = DateTime.Parse(System.Configuration.ConfigurationManager.AppSettings["OnTimeCutOff"].ToString());
         DateTime ExtendedCutOff = DateTime.Parse(System.Configuration.ConfigurationManager.AppSettings["ExtendedCutOff"].ToString());
         DateTime Extended_2_CutOff = DateTime.Parse(System.Configuration.ConfigurationManager.AppSettings["Extended_2_CutOff"].ToString());
+        DateTime Extended_3_CutOff = DateTime.Parse(System.Configuration.ConfigurationManager.AppSettings["Extended_3_CutOff"].ToString());
 
         Entry entry = EntryList.GetEntryList(paymentGroupId, Guid.Empty, "").FirstOrDefault();
         string DateDependent = entry.DateSubmitted.ToString(DateFormat);
@@ -2366,12 +2367,19 @@ public class GeneralFunction
             else
                 DateDependent = DateTime.Parse(System.Configuration.ConfigurationManager.AppSettings["DueDate3"].ToString()).ToString(DateFormat);
         }
-        else
+        else if (entry.DateSubmitted < Extended_3_CutOff)
         {
             if (Type == "D_String")
                 DateDependent = "D4";
             else
                 DateDependent = DateTime.Parse(System.Configuration.ConfigurationManager.AppSettings["DueDate4"].ToString()).ToString(DateFormat);
+        }
+        else
+        {
+            if (Type == "D_String")
+                DateDependent = "D4";
+            else
+                DateDependent = DateTime.Parse(System.Configuration.ConfigurationManager.AppSettings["DueDate5"].ToString()).ToString(DateFormat);
         }
         return DateDependent;
     }
@@ -4360,8 +4368,10 @@ public class GeneralFunction
             price = decimal.Parse(ConfigurationSettings.AppSettings["Price2"]);
         else if (IsExtended_2_Now(entry.DateSubmitted))
             price = decimal.Parse(ConfigurationSettings.AppSettings["Price3"]);
-        else
+        else if (IsExtended_3_Now(entry.DateSubmitted))
             price = decimal.Parse(ConfigurationSettings.AppSettings["Price4"]);
+        else
+            price = decimal.Parse(ConfigurationSettings.AppSettings["Price5"]);
 
         return price;
     }
@@ -4395,6 +4405,11 @@ public class GeneralFunction
     {
         return (dateTimeCheck > DateTime.Parse(System.Configuration.ConfigurationManager.AppSettings["ExtendedCutOff"]) &&
                 dateTimeCheck < DateTime.Parse(System.Configuration.ConfigurationManager.AppSettings["Extended_2_CutOff"]));
+    }
+    public static bool IsExtended_3_Now(DateTime dateTimeCheck)
+    {
+        return (dateTimeCheck > DateTime.Parse(System.Configuration.ConfigurationManager.AppSettings["Extended_2_CutOff"]) &&
+                dateTimeCheck < DateTime.Parse(System.Configuration.ConfigurationManager.AppSettings["Extended_3_CutOff"]));
     }
 
 

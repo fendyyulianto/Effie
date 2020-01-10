@@ -659,7 +659,7 @@ public partial class Main_Entry : System.Web.UI.Page
 
     private void BindCompanyCreditGrid()
     {
-        List<CompanyCredit> list = GeneralFunction.GetCCListCache();
+        List<CompanyCredit> list = GeneralFunction.GetCCListCache().OrderBy(x => x.ContactType).ToList();
 
         gvCC.DataSource = list;
         gvCC.DataBind();

@@ -21,6 +21,16 @@ public partial class User_Login : System.Web.UI.Page
         {
             panelRegister.Visible = false;
         }
+
+        if (DateTime.Now > DateTime.Parse(ConfigurationManager.AppSettings["Extended_3_CutOff"]))
+        {
+            divTextButtom.Visible = true;
+        }
+        else
+        {
+            divTextButtom.Visible = false;
+        }
+
     }
     private bool IsBackDoor()
     {

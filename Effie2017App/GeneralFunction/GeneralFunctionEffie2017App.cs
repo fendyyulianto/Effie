@@ -77,6 +77,7 @@ public class GeneralFunctionEffie2017App
         DateTime OnTimeCutOff = DateTime.Parse(System.Configuration.ConfigurationManager.AppSettings["OnTimeCutOff"].ToString());
         DateTime ExtendedCutOff = DateTime.Parse(System.Configuration.ConfigurationManager.AppSettings["ExtendedCutOff"].ToString());
         DateTime Extended_2_CutOff = DateTime.Parse(System.Configuration.ConfigurationManager.AppSettings["Extended_2_CutOff"].ToString());
+        DateTime Extended_3_CutOff = DateTime.Parse(System.Configuration.ConfigurationManager.AppSettings["Extended_3_CutOff"].ToString());
 
         if (paymentGroupId != Guid.Empty && paymentGroupId != null)
         {
@@ -110,12 +111,19 @@ public class GeneralFunctionEffie2017App
             else
                 DateDependent = DateTime.Parse(System.Configuration.ConfigurationManager.AppSettings["DueDate3"].ToString()).ToString(DateFormat);
         }
-        else
+        else if (DateSubmitted < Extended_3_CutOff)
         {
             if (Type == "D_String")
                 DateDependent = "D4";
             else
                 DateDependent = DateTime.Parse(System.Configuration.ConfigurationManager.AppSettings["DueDate4"].ToString()).ToString(DateFormat);
+        }
+        else
+        {
+            if (Type == "D_String")
+                DateDependent = "D4";
+            else
+                DateDependent = DateTime.Parse(System.Configuration.ConfigurationManager.AppSettings["DueDate5"].ToString()).ToString(DateFormat);
         }
         return DateDependent;
     }

@@ -15,11 +15,6 @@
         <br/><br/>
     </div>--%>
 
-    <div>
-        <div style=" margin-left: 169px; margin-right: 169px; line-height:21px ">
-            <%--<span style="font-weight:bold;">Final Material Submission Deadline: 14 January 2019</span>--%> <%--<br /><br />--%>
-        </div>
-    </div>
     
 
     <%--<div>
@@ -75,6 +70,11 @@
             </tr>
         </table>
         </div>
-
+    <div runat="server" id="divTextButtom">
+        <br /><br />
+        <div style=" margin-left: 169px; margin-right: 169px; line-height:21px; text-align: center;">
+           <span>LAST CHANCE Entry Application Deadline – 17th January 2020, Entry Fee - S$2290.</span> 
+        </div>
+    </div>
 </asp:Content>
 

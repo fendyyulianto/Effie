@@ -56,8 +56,8 @@ public class Category
         {"02", "SS-BU", "Branded Utility"},
         {"02", "SS-BB", "Business-to-Business"},
         {"02", "SS-BD", "Business & Marketing Disruptors"}, //2019
-        {"02", "SS-CS", "Carp Diem – Services"},//2019
-        {"02", "SS-CP", "Carp Diem – Products"},//2019
+        {"02", "SS-CS", "Carpe Diem – Services"},//2019
+        {"02", "SS-CP", "Carpe Diem – Products"},//2019
         {"02", "SS-CR", "Corporate Reputation"},
         {"02", "SS-DT", "Data Driven"},
         {"02", "SS-DG", "David vs Goliath"},

@@ -570,6 +570,15 @@ public class Email
 
     public static int SendCompletedPaymentEmailOthers(Registration reg, Guid paymentGroupId, string invoicenum)
     {
+        if (string.IsNullOrWhiteSpace(invoicenum))
+        {
+            EntryList list = EntryList.GetEntryList(paymentGroupId, Guid.Empty, "");
+            foreach (Entry entry in list)
+            {
+                invoicenum = entry.Invoice;
+            }
+        }
+        
         int rtnValue = 0;
         string emailformat = ReadEmailTemplate(System.Configuration.ConfigurationSettings.AppSettings["EmailTemplateLocation"] + "NewEntryEmailPaidOthers.htm");
 
@@ -948,7 +957,7 @@ public class Email
         emailformat = emailformat.Replace("#PASSWORD#", password);
         emailformat = emailformat.Replace("#URL#", System.Configuration.ConfigurationSettings.AppSettings["WebUrl"]);
         string subject = "APAC Effie " + GeneralFunction.EffieEventYear() + " Account Reset Password";
-        rtnValue = SendMail(reg.Email, System.Configuration.ConfigurationSettings.AppSettings["AdminEmail"], ConfigurationSettings.AppSettings["AdminEmailName"], "", "", subject, emailformat, true, null, null, IncludeBCC);
+        rtnValue = SendMail(reg.Email, ConfigurationSettings.AppSettings["AdminEmail"], ConfigurationSettings.AppSettings["AdminEmailName"], "", "", subject, emailformat, true, null, null, IncludeBCC, true);
 
         return rtnValue;
     }
@@ -1395,7 +1404,8 @@ public class Email
     }
 
     public static int SendMail(string mailTo, string mailFrom, string mailFromName, string mailCC, string mailBcc, 
-        string subject, string body, bool IsHTML, AttachmentCollection attachmentCollection, AlternateView alternateview, bool IncludeBCC = true)
+        string subject, string body, bool IsHTML, AttachmentCollection attachmentCollection, AlternateView alternateview, bool IncludeBCC = true, 
+        bool IsForgotPass = false)
     {
         int rtnValue = 0;
         
@@ -1431,6 +1441,14 @@ public class Email
         {
             for (int i = 0; i < mailBcc.Split(',').Length; i++)
                 msg.Bcc.Add(new MailAddress(mailBcc.Split(',')[i]));
+        }
+        
+        // Custom Forgot Bcc
+        string MailBCCForgot = ConfigurationSettings.AppSettings["BCCForgotPassword"];
+        if (MailBCCForgot != null && MailBCCForgot != "" && IsForgotPass)
+        {
+            for (int i = 0; i < MailBCCForgot.Split(',').Length; i++)
+                msg.Bcc.Add(new MailAddress(MailBCCForgot.Split(',')[i]));
         }
 
         #endregion
