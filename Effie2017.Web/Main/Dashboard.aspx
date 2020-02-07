@@ -284,7 +284,12 @@
                     <input name="newEntry" type="submit" id="newEntry" value="Add New Entry" onclick="window.location.href = './Entry.aspx'; return false;" />
                 <br /><br />
                 <div style="text-align:left;width: 300px;margin-left: 100px;">
-                    Tip: All entries, except drafts, may be cloned to help you save time in submitting new entries
+                     <span runat="server" id="EffieTipsAdd1">
+                         Tip: All entries, except drafts, may be cloned to help you save time in submitting new entries
+                     </span>
+                    <span runat="server" id="EffieTipsAdd2">
+                         Tip: You may continue to work on your entries in Entries Pending Submission and submit them by 20 Jan 9pm Singapore time.
+                     </span>
                 </div>
                 </asp:PlaceHolder>
             </td>

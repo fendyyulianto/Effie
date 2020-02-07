@@ -1438,7 +1438,7 @@ public class GeneralFunction
         ddl.Items.Add("Publicis Groupe");
         ddl.Items.Add("BlueFocus");
         ddl.Items.Add("Enero Group");
-        ddl.Items.Add("Dentsu");
+        ddl.Items.Add("Dentsu Group");
         ddl.Items.Add("Cheil Worldwide");
         ddl.Items.Add("Creative Lions Asia");
         ddl.Items.Add("The Aleph Group");
@@ -1490,6 +1490,7 @@ public class GeneralFunction
         ddlNetwork.Items.Add("Culture Machine");
         ddlNetwork.Items.Add("DDB Worldwide");
         ddlNetwork.Items.Add("Dentsu Aegis Network");
+        ddlNetwork.Items.Add("Dentsu Japan Network");
         ddlNetwork.Items.Add("Edelman");
         ddlNetwork.Items.Add("Famous Innovations");
         ddlNetwork.Items.Add("FCB");
@@ -1552,6 +1553,7 @@ public class GeneralFunction
         ddlNetwork.Items.Add("Wavemaker");
         ddlNetwork.Items.Add("Wieden+Kennedy");
         ddlNetwork.Items.Add("WPP AUNZ");
+        ddlNetwork.Items.Add("Wunderman Thompson");
         ddlNetwork.Items.Add("X Social Group Limited");
         ddlNetwork.Items.Add("Y&R");
         ddlNetwork.Items.Add("Youku Tudou");
@@ -4997,6 +4999,11 @@ public class GeneralFunction
     {
         return (DateTime.Now > DateTime.Parse(ConfigurationManager.AppSettings["EntrantLoginCutOff"]));
     }
+    public static bool IsAllowClone()
+    {
+        return ("1" == ConfigurationManager.AppSettings["IsAllowClone"].ToString());
+    }
+    
     public static bool IsEntrantSubmissionCutOff()
     {
         return (DateTime.Now > DateTime.Parse(ConfigurationManager.AppSettings["EntrantSubmissionCutOff"]));

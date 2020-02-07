@@ -44,6 +44,25 @@ public partial class Main_Dashboard : System.Web.UI.Page
         {
             phAddNewEntry.Visible = false;
         }
+
+
+        if (DateTime.Now < DateTime.Parse(ConfigurationManager.AppSettings["EffieTipsAdd1"]))
+        {
+            EffieTipsAdd1.Visible = true;
+        }
+        else
+        {
+            EffieTipsAdd1.Visible = false;
+        }
+
+        if (DateTime.Now > DateTime.Parse(ConfigurationManager.AppSettings["EffieTipsAdd1"]))
+        {
+            EffieTipsAdd2.Visible = true;
+        }
+        else
+        {
+            EffieTipsAdd2.Visible = false;
+        }
     }
 
     protected void PopulateForm()
@@ -185,7 +204,7 @@ public partial class Main_Dashboard : System.Web.UI.Page
                 catch { }
             }
 
-            if (GeneralFunction.IsEntrantSubmissionCutOff())
+            if (GeneralFunction.IsEntrantSubmissionCutOff() || !GeneralFunction.IsAllowClone())
             {
                 try
                 {
