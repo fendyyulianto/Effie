@@ -195,9 +195,8 @@ public partial class Jury_Dashboard : PageSecurity_Jury
             Entry entry = (Entry)e.Item.DataItem;
             //List<Score> scores = GeneralFunction.GetScoreListFromJuryCache(jury.Id, round);
             Score score = GeneralFunction.GetScoreFromMatchingEntryCache(entry, jury.Id, round);
-
-
-            LinkButton lnkBtn = null;
+            
+            LinkButton lnkBtn, lnkBtn2 = null;
             Label lbl = null;
             HyperLink lnk = null;
 
@@ -218,7 +217,19 @@ public partial class Jury_Dashboard : PageSecurity_Jury
 
             // Category
             lbl = (Label)e.Item.FindControl("lbCategory");
-            lbl.Text = GeneralFunction.GetEntryMarket(entry.CategoryMarketFromRound(round)) + "<br/>" + entry.CategoryPSDetailFromRound(round); 
+            lbl.Text = GeneralFunction.GetEntryMarket(entry.CategoryMarketFromRound(round)) + "<br/>" + entry.CategoryPSDetailFromRound(round);
+
+
+
+            // Client
+            lbl = (Label)e.Item.FindControl("lbClient");
+            lbl.Text = entry.Client;
+
+
+
+            // Brand
+            lbl = (Label)e.Item.FindControl("lbBrand");
+            lbl.Text = entry.Brand;
 
 
             // submitted by
@@ -238,7 +249,6 @@ public partial class Jury_Dashboard : PageSecurity_Jury
             lbl.ForeColor = System.Drawing.Color.Gray;
 
 
-
             // ACtion
             lnkBtn = (LinkButton)e.Item.FindControl("lnkScore");
             lnkBtn.CommandArgument = entry.Id.ToString();
@@ -247,6 +257,28 @@ public partial class Jury_Dashboard : PageSecurity_Jury
                 lnkBtn.Text = "View";
             }
 
+
+            // recuse or not to recuse
+            lnkBtn = (LinkButton)e.Item.FindControl("lnkRecuse");
+            lnkBtn2 = (LinkButton)e.Item.FindControl("LnkUnrecuse");
+            if (score != null)
+            {
+                lnkBtn.Visible = !score.IsAdminRecuse && !score.IsRecuse;
+                lnkBtn2.Visible = score.IsAdminRecuse || score.IsRecuse;
+            }
+            else
+            {
+                // no score data therefore no recuse information saved
+                lnkBtn.Visible = true;
+            }
+            lnkBtn.CommandArgument = entry.Id.ToString();
+            lnkBtn2.CommandArgument = entry.Id.ToString();
+
+            if (Security.IsReadOnlyAdmin())
+            {
+                lnkBtn.Visible = false;
+                lnkBtn2.Visible = false;
+            }
 
 
             if (score != null)
@@ -329,6 +361,42 @@ public partial class Jury_Dashboard : PageSecurity_Jury
         {
             //GeneralFunction.SetRedirect("../Admin/EntryList.aspx");  // to return from whereever
             Response.Redirect("../Jury/EntryScore.aspx?eId=" + e.CommandArgument.ToString() + "&r=" + round);
+        }
+
+        // Recuse / Unrecuse
+        if (e.CommandName == "Recuse" || e.CommandName == "Unrecuse")
+        {
+            lblError.Text = "";
+            Effie2017.App.Entry entry = Effie2017.App.Entry.GetEntry(new Guid(e.CommandArgument.ToString()));
+
+            Score score = GeneralFunction.GetScoreFromMatchingEntryCache(entry, jury.Id, round);
+            if (score == null)
+            {
+                score = Score.NewScore();
+                score.EntryId = entry.Id;
+                score.Juryid = jury.Id;
+                score.Round = round;
+                score.DateCreatedString = DateTime.Now.ToString();
+                score.DateSubmittedString = DateTime.Now.ToString();
+            }
+
+            // Recuse / Unrecuse
+            if (e.CommandName == "Recuse")
+            {
+                score.IsAdminRecuse = true;
+            }
+
+            if (e.CommandName == "Unrecuse")
+            {
+                score.IsAdminRecuse = false;
+                score.IsRecuse = false;
+            }
+
+            if (score.IsValid)
+            {
+                score.Save();
+                PopulateForm();
+            }
         }
     }
     protected void radGridEntry_NeedDataSource(object Sender, GridNeedDataSourceEventArgs e)

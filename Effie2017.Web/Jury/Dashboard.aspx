@@ -205,6 +205,16 @@
                         <asp:Label ID="lbCategory" runat="server" Text="" />
                     </ItemTemplate>
                 </telerik:GridTemplateColumn>
+                <telerik:GridTemplateColumn HeaderText="Client" ItemStyle-Width="150px">
+                    <ItemTemplate>
+                        <asp:Label ID="lbClient" runat="server" Text="" />
+                    </ItemTemplate>
+                </telerik:GridTemplateColumn>
+                <telerik:GridTemplateColumn HeaderText="Brand" ItemStyle-Width="150px">
+                    <ItemTemplate>
+                        <asp:Label ID="lbBrand" runat="server" Text="" />
+                    </ItemTemplate>
+                </telerik:GridTemplateColumn>
                 <telerik:GridTemplateColumn HeaderText="Entrant" ItemStyle-Width="100px" Visible="false">
                     <ItemTemplate>
                         <asp:Label ID="lnkBtnBuSubmittedBy" runat="server" Text="" />
@@ -255,6 +265,8 @@
                     <ItemTemplate>
                         <asp:LinkButton ID="lnkScore" runat="server" Text="Score" CssClass="tblLinkBlack"
                             CommandName="Score"></asp:LinkButton>
+                        <asp:LinkButton ID="lnkRecuse" runat="server" Text="Recuse" CssClass="tblLinkBlack" CommandName="Recuse"  Visible="false"></asp:LinkButton> <%--OnClientClick="return confirm('Confirm to recuse?');"--%>
+                        <asp:LinkButton ID="LnkUnrecuse" runat="server" Text="Unrecuse" CssClass="tblLinkBlack" CommandName="Unrecuse"  Visible="false"></asp:LinkButton> <%--OnClientClick="return confirm('Confirm to unrecuse?');"--%>
                     </ItemTemplate>
                 </telerik:GridTemplateColumn>
             </Columns>

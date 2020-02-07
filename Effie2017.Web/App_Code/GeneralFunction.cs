@@ -24,6 +24,7 @@ using ClosedXML.Excel;
 using HtmlAgilityPack;
 using System.Web.UI.HtmlControls;
 using System.Text;
+using System.Globalization;
 
 /// <summary>
 /// Summary description for GeneralFunction
