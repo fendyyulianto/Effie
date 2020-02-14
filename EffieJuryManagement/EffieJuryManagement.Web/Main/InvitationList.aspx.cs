@@ -6,6 +6,7 @@ using Telerik.Web.UI;
 using System.Collections.Generic;
 using ClosedXML.Excel;
 using System.IO;
+using System.Text.RegularExpressions;
 
 public partial class Main_InvitationList : PageSecurity_Admin
 {
@@ -908,9 +909,12 @@ public partial class Main_InvitationList : PageSecurity_Admin
             #endregion
 
             y++;
-
+            int count = 0;
             foreach (Invitation inv in flist)
             {
+                count++;
+                //if (count <= 60 || count >= 62) continue;
+
                 x = 1;
 
                 Jury jury = Jury.GetJury(inv.JuryId);
@@ -945,7 +949,7 @@ public partial class Main_InvitationList : PageSecurity_Admin
                 workbook.Worksheets.Worksheet(sheetName).Cell(y, x).SetValue(jury.PAAddress2); x++;
                 workbook.Worksheets.Worksheet(sheetName).Cell(y, x).SetValue(jury.PAEmail); x++;
 
-                workbook.Worksheets.Worksheet(sheetName).Cell(y, x).SetValue(jury.Profile); x++;
+                workbook.Worksheets.Worksheet(sheetName).Cell(y, x).SetValue(ReplaceString(jury.Profile)); x++;
 
                 workbook.Worksheets.Worksheet(sheetName).Cell(y, x).SetValue(jury.CompanyType); x++;
                 string network = jury.Network;
@@ -1046,6 +1050,7 @@ public partial class Main_InvitationList : PageSecurity_Admin
                 #endregion
 
                 y++;
+
             }
 
 
@@ -1060,6 +1065,15 @@ public partial class Main_InvitationList : PageSecurity_Admin
         }
     }
 
+    protected string ReplaceString(string str)
+    {
+        str = str.Replace("\n", " ");
+        str = str.Replace("\r", String.Empty);
+        str = str.Replace("\t", String.Empty);
+        str = str.Replace("\v", " ");
+        str = str.Replace("  ", " ");
+        return str;
+    }
 
 
     protected void btnbtnSummaryReport_Click(object sender, EventArgs e)
@@ -1117,6 +1131,8 @@ public partial class Main_InvitationList : PageSecurity_Admin
             workbook.Worksheets.Worksheet(sheetName).Cell(y, x).SetValue("R1 Email Sent"); x++;
             workbook.Worksheets.Worksheet(sheetName).Cell(y, x).SetValue("R2 Email Sent"); x++;
             workbook.Worksheets.Worksheet(sheetName).Cell(y, x).SetValue("Read"); x++;
+            workbook.Worksheets.Worksheet(sheetName).Cell(y, x).SetValue("Email"); x++;
+            workbook.Worksheets.Worksheet(sheetName).Cell(y, x).SetValue("PAEmail"); x++;
 
 
             #endregion
@@ -1253,6 +1269,10 @@ public partial class Main_InvitationList : PageSecurity_Admin
                 }
                 //////////////////////////////////////////////////////////////////////////////////////////
                 #endregion
+
+
+                workbook.Worksheets.Worksheet(sheetName).Cell(y, x).SetValue(jury.Email); x++;
+                workbook.Worksheets.Worksheet(sheetName).Cell(y, x).SetValue(jury.PAEmail); x++;
 
                 y++;
             }

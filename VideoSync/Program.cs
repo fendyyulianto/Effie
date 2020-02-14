@@ -10,6 +10,8 @@ using Amazon.S3.IO;
 using Amazon.S3.Model;
 using Effie2017.App;
 using System.Globalization;
+using System.Threading;
+using System.Configuration;
 
 namespace VideoSync
 {
@@ -19,6 +21,15 @@ namespace VideoSync
 
         static void Main(string[] args)
         {
+            if (System.Net.ServicePointManager.SecurityProtocol.HasFlag(System.Net.SecurityProtocolType.Tls12) == false)
+            {
+                System.Net.ServicePointManager.SecurityProtocol = System.Net.ServicePointManager.SecurityProtocol | System.Net.SecurityProtocolType.Tls12;
+            }
+
+            CultureInfo culture = new CultureInfo(ConfigurationManager.AppSettings["DefaultCulture"]);
+            Thread.CurrentThread.CurrentCulture = culture;
+            Thread.CurrentThread.CurrentUICulture = culture;
+
             Log logMST = new Log();
             logMST.Begin();
             logMST.WriteLog("**********************************************");
@@ -199,7 +210,7 @@ namespace VideoSync
 
                 try
                 {
-                    entry = entryList.Where(m => m.Serial.Equals(entryId)).Single();
+                    entry = entryList.FirstOrDefault(m => m.Serial.Equals(entryId));
                 }
                 catch{}
                 

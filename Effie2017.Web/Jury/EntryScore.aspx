@@ -170,6 +170,18 @@
                 </tr>
                 <tr>
                     <td style="padding-bottom: 10px">
+                        Brand:
+                    </td>
+                    <td style="padding-bottom: 10px">
+                        <asp:Label ID="lbBrand" runat="server" />
+                    </td>
+                    <td style="padding-bottom: 10px">
+                    </td>
+                    <td style="padding-bottom: 10px">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-bottom: 10px">
                         Category:
                     </td>
                     <td style="padding-bottom: 10px">
@@ -266,9 +278,7 @@
         <asp:PlaceHolder ID="phFlag" runat="server">
             <br />
             <p>
-                You may flag this entry for Disqualification or Wrong Category, and provide your
-                justifications below. If you do, continue to score it as you would for a regular
-                entry. If you have selected wrong category, please propose a suitable category.</p>
+                Use this flag for disqualification, or if you feel the case does not meet the category definition.  Score as per normal and the Judging Committee will revew the case.</p>
             <br />
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tbody>
@@ -286,7 +296,7 @@
                     </tr>
                     <tr>
                         <td style="padding-bottom: 10px; width: 300px">
-                            Reason/Recommendation:
+                            Flag Reason:
                         </td>
                         <td style="padding-bottom: 10px">
                             <span class="txtlong">
@@ -445,7 +455,7 @@
     </div>
     <div style="clear: both">
     </div>
-    <p style="font-weight:bold;">If you have adjusted the scores, please remember to review this field again before you save the scores.</p><br />
+    <p style="font-weight:bold;">If you flag for advancement into Round 2, please ensure that your scores reflect your intent.</p><br />
     <hr />    
     <div class="leftContainer">
     <p>In addition to your scores, please provide feedback on each case to further explain your scoring. It also offers an opportunity to provide anonymous feedback to the entrant. Please comment on the strongest and weakest elements of the case. </p>

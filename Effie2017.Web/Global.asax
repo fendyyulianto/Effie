@@ -5,7 +5,10 @@
     void Application_Start(object sender, EventArgs e)
     {
         // Code that runs on application startup
-
+        if (System.Net.ServicePointManager.SecurityProtocol.HasFlag(System.Net.SecurityProtocolType.Tls12) == false)
+        {
+            System.Net.ServicePointManager.SecurityProtocol = System.Net.ServicePointManager.SecurityProtocol | System.Net.SecurityProtocolType.Tls12;
+        }
     }
 
     void Application_End(object sender, EventArgs e)
@@ -16,6 +19,8 @@
 
     void Application_Error(object sender, EventArgs e)
     {
+
+
         // Code that runs when an unhandled error occurs
 
         Exception exp = (HttpUnhandledException)Server.GetLastError();

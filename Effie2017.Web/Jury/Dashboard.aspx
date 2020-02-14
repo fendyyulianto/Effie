@@ -22,8 +22,103 @@
             }
         }
     </script>
+    
+    <style>
+
+        #popup {
+            opacity: 1;
+            width: 800px;
+            height: 550px;
+            padding: 25px;
+            margin-left: 115px;
+            top: 0;
+            margin-top: 0px;
+            position: fixed;
+            border: 6px solid #bbbbbb;
+            background-color: #fff;
+            z-index: 100;
+            overflow-y: scroll;
+        }
+
+        .overlay {
+            background-color: #000;
+            position: fixed;
+            top: 0;
+            right: 0;
+            min-height: 935px;
+            min-width: 1800px;
+            opacity: 0.5;
+            filter: alpha(opacity=50);
+        }
+
+        a.tooltip span {
+            width: 200px;
+        }
+
+        .ModalPopUpSmall {
+            opacity: 1;
+            width: 800px;
+            height: 290px;
+            padding: 25px;
+            margin-left: 115px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            position: fixed;
+            border: 6px solid #bbbbbb;
+            background-color: #fff;
+            z-index: 1002;
+            overflow-y: scroll;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+
+    
+    <asp:PlaceHolder ID="phRecuseEntry" runat="server" Visible="false">
+        <div class="ModalPopUpSmall">
+            <h2>
+                <asp:Label runat="server" ID="Label4">Recuse Entry</asp:Label></h2>
+            <hr />
+            <br />
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+                <tr>
+                    <td style="padding-bottom: 10px; width: 300px">
+                        Recuse:
+                    </td>
+                    <%--OnSelectedIndexChanged="ddlRecuse_SelectedIndexChanged" AutoPostBack="True" --%>
+                    <td style="padding-bottom: 10px">
+                        <asp:DropDownList ID="ddlRecuse" runat="server" Style="width: 234px; font-size: 15px;">
+                            <asp:ListItem Value="No" Text="No" />
+                            <asp:ListItem Value="Yes" Text="Yes" />
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-bottom: 10px; width: 25%;">
+                        If Yes, state reason:
+                    </td>
+                    <td style="padding-bottom: 10px">
+                        <asp:TextBox ID="txtRecuseRemarks" runat="server" TextMode="MultiLine" Font-Size="15px" />
+                        <asp:HiddenField ID="txtEntryId" runat="server" />
+                    </td>
+                </tr>
+            </tbody>
+            </table>
+            <br />
+            <br />
+            <asp:Button runat="server" ID="Button5" Text="Submit" OnClick="btnSubmitRecuseEntry_Click" />
+            &nbsp;
+             <asp:Button runat="server" ID="Button4" Text="Close" OnClick="btnClose_Click" />
+        </div>
+        <div class="overlay">
+        </div>
+    </asp:PlaceHolder>
+
+
     <h2>
         Entries Overview</h2>
     <br />
@@ -41,8 +136,30 @@
         Please ensure that you go through the Judging Guide in it’s entirety before you commence judging, and take your time for each case.
     </p>
     <br />    
-    <p>
-        <span style="font-weight: bold; text-decoration: underline;">Click on the Score button to review all the materials and score the entry.</span>  Your initial scores will be saved as drafts to allow for calibrations and adjustments as you move along. When you are ready to confirm the scores, you may submit the cases individually or en-mass by clicking the <span style="font-weight: bold;">Select All</span> button on the left of the table.</p>
+    <div>
+        <span style="font-weight: bold;">RECUSAL POLICY:</span> Please review the list of entries that are assigned to you and RECUSE yourself if one or more of the following is true: <br/>
+ 
+        <ul style="margin-left: 15px;">
+            <li>If it is from the agency or company where you work.</li>
+            <li>You have worked directly on the case, or </li>
+            <li>The case represents direct competitive work to a brand you work directly on.</li>
+        </ul>
+
+        <br/>
+
+        <span style="font-weight: bold;">To begin, click on the Score button to review all the materials and score the entry. </span> 
+
+        <br/><br/>
+
+        Your initial scores will be saved as drafts to allow for calibrations and adjustments as you move along. When you are ready to confirm the scores, 
+        you may submit the cases individually or en-mass by clicking the <span style="font-weight: bold;">Select All</span> button on the left of the table, and clicking the <span style="font-weight: bold;">Submit Score(s) on this page.</span> 
+
+
+
+
+      <%--  <span style="font-weight: bold; text-decoration: underline;">Click on the Score button to review all the materials and score the entry.</span>  Your initial scores will be saved as drafts to allow for calibrations and adjustments as you move along. When you are ready to confirm the scores, you may submit the cases individually or en-mass by clicking the <span style="font-weight: bold;">Select All</span> button on the left of the table.--%>
+
+    </div>
     <br />
     <%--<p>
         If you need any assistance at any time, please do not hesitate to reach out to the APAC Effie team.<br /><br />
@@ -156,9 +273,9 @@
     </div>
     <div style="clear: both;">
     </div>
-    <div style="padding-left: 85%;">
+    <div style="padding-right: 85%;">
         <asp:Button runat="server" ID="btnSubmitScore" Text="Submit Score(s)" OnClientClick="return confirm('Confirm to submit score for all entry(s)?');"
-            OnClick="btnSubmitScore_Click" />
+            OnClick="btnSubmitScore_Click" style="font-size: 15px;"/>
     </div>
     <div style="clear: both">
     </div>
@@ -200,12 +317,7 @@
                         <asp:Label ID="lbCampaign" runat="server" Text="" />
                     </ItemTemplate>
                 </telerik:GridTemplateColumn>
-                <telerik:GridTemplateColumn HeaderText="Category" ItemStyle-Width="150px">
-                    <ItemTemplate>
-                        <asp:Label ID="lbCategory" runat="server" Text="" />
-                    </ItemTemplate>
-                </telerik:GridTemplateColumn>
-                <telerik:GridTemplateColumn HeaderText="Client" ItemStyle-Width="150px">
+                <telerik:GridTemplateColumn HeaderText="Client" ItemStyle-Width="150px" Visible="false">
                     <ItemTemplate>
                         <asp:Label ID="lbClient" runat="server" Text="" />
                     </ItemTemplate>
@@ -213,6 +325,11 @@
                 <telerik:GridTemplateColumn HeaderText="Brand" ItemStyle-Width="150px">
                     <ItemTemplate>
                         <asp:Label ID="lbBrand" runat="server" Text="" />
+                    </ItemTemplate>
+                </telerik:GridTemplateColumn>
+                <telerik:GridTemplateColumn HeaderText="Category" ItemStyle-Width="150px">
+                    <ItemTemplate>
+                        <asp:Label ID="lbCategory" runat="server" Text="" />
                     </ItemTemplate>
                 </telerik:GridTemplateColumn>
                 <telerik:GridTemplateColumn HeaderText="Entrant" ItemStyle-Width="100px" Visible="false">
@@ -265,7 +382,9 @@
                     <ItemTemplate>
                         <asp:LinkButton ID="lnkScore" runat="server" Text="Score" CssClass="tblLinkBlack"
                             CommandName="Score"></asp:LinkButton>
-                        <asp:LinkButton ID="lnkRecuse" runat="server" Text="Recuse" CssClass="tblLinkBlack" CommandName="Recuse"  Visible="false"></asp:LinkButton> <%--OnClientClick="return confirm('Confirm to recuse?');"--%>
+                         <asp:LinkButton ID="lnkRecuse" runat="server" Text="Recuse" CssClass="tblLinkBlack"
+                            CommandName="Recuse" OnClientClick="return confirm('Confirm to recuse?');"></asp:LinkButton>&nbsp;
+
                         <asp:LinkButton ID="LnkUnrecuse" runat="server" Text="Unrecuse" CssClass="tblLinkBlack" CommandName="Unrecuse"  Visible="false"></asp:LinkButton> <%--OnClientClick="return confirm('Confirm to unrecuse?');"--%>
                     </ItemTemplate>
                 </telerik:GridTemplateColumn>

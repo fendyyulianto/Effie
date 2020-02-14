@@ -11,7 +11,7 @@ public partial class Testing_Webrequest : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        WebRequest request = WebRequest.Create("http://localhost/Effie2017.Web/Testing/ErrorTest.aspx");
+        WebRequest request = WebRequest.Create("http://localhost/Effie/Testing/ErrorTest.aspx");
         WebResponse responseItem = request.GetResponse();
     }
 }

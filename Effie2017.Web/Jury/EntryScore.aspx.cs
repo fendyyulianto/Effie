@@ -111,7 +111,7 @@ public partial class Jury_EntryScore : PageSecurity_Jury
         lbEntryId.Text = entry.Serial;
         lbTitle.Text = entry.Campaign;
         lbCategory.Text = GeneralFunction.GetEntryMarket(entry.CategoryMarketFromRound(round)) + "<br/>" + entry.CategoryPSDetailFromRound(round);
-
+        lbBrand.Text = entry.Brand;
 
         // uploads - entry form
         #region old method
@@ -199,7 +199,8 @@ public partial class Jury_EntryScore : PageSecurity_Jury
             lnkCreativeVid.Visible = true;
             lnkCreativeVid.NavigateUrl = System.Configuration.ConfigurationManager.AppSettings["AWSS3WebURL"] + System.Configuration.ConfigurationManager.AppSettings["AWSBucket_Small"] + "/" + entry.Serial + "_CreativeMaterials_Video.mp4?" + DateTime.Now.Ticks.ToString();
         }
-        else if (File.Exists(System.Configuration.ConfigurationSettings.AppSettings["storagePhysicalPath"] + "EntryUpload\\CreativeVideo\\" + entry.Serial + "_CreativeMaterials_Video.mp4"))
+        else 
+        if (File.Exists(System.Configuration.ConfigurationSettings.AppSettings["storagePhysicalPath"] + "EntryUpload\\CreativeVideo\\" + entry.Serial + "_CreativeMaterials_Video.mp4"))
         {
             lnkCreativeVid.Visible = true;
             lnkCreativeVid.NavigateUrl = System.Configuration.ConfigurationSettings.AppSettings["storageVirtualPath"] + "EntryUpload\\CreativeVideo\\" + entry.Serial + "_CreativeMaterials_Video.mp4";

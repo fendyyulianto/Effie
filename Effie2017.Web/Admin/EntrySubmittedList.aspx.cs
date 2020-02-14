@@ -714,8 +714,12 @@ public partial class Admin_EntrySubmittedList : PageSecurity_Admin
                     //lnk.CssClass = "fancybox2 fancybox.iframe tblLinkBlack";
                 }
 
-
-                if (File.Exists(System.Configuration.ConfigurationSettings.AppSettings["storagePhysicalPath"] + "EntryUpload\\CreativeVideo\\" + entry.Serial + "_CreativeMaterials_Video.mp4"))
+                if (entry.Serial == "SP-IT001")
+                {
+                    int asdas = 9;
+                }
+                string filename = System.Configuration.ConfigurationSettings.AppSettings["storagePhysicalPath"] + "EntryUpload\\CreativeVideo\\" + entry.Serial + "_CreativeMaterials_Video.mp4";
+                if (File.Exists(filename))
                 {
                     lnkBtn = (LinkButton)e.Item.FindControl("lnkBtnCreative2");
                     lnkBtn.Visible = true;

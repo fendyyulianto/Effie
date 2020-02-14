@@ -41,3 +41,10 @@ C:\project_data\dotnet\EFFIE\PROJECT_EFFIE\Effie2017App\bin\Release\Newtonsoft.J
 C:\project_data\dotnet\EFFIE\PROJECT_EFFIE\Effie2017App\obj\Release\Effie2017App.csprojResolveAssemblyReference.cache
 C:\project_data\dotnet\EFFIE\PROJECT_EFFIE\Effie2017App\obj\Release\Effie2017App.dll
 C:\project_data\dotnet\EFFIE\PROJECT_EFFIE\Effie2017App\obj\Release\Effie2017App.pdb
+C:\DATA\project_data\dotnet\EFFIE\EFFIE_PROJECT\Effie2017App\bin\Release\Effie2017App.dll
+C:\DATA\project_data\dotnet\EFFIE\EFFIE_PROJECT\Effie2017App\bin\Release\Effie2017App.pdb
+C:\DATA\project_data\dotnet\EFFIE\EFFIE_PROJECT\Effie2017App\bin\Release\AjaxControlToolkit.dll
+C:\DATA\project_data\dotnet\EFFIE\EFFIE_PROJECT\Effie2017App\bin\Release\Newtonsoft.Json.dll
+C:\DATA\project_data\dotnet\EFFIE\EFFIE_PROJECT\Effie2017App\bin\Release\Newtonsoft.Json.xml
+C:\DATA\project_data\dotnet\EFFIE\EFFIE_PROJECT\Effie2017App\obj\Release\Effie2017App.dll
+C:\DATA\project_data\dotnet\EFFIE\EFFIE_PROJECT\Effie2017App\obj\Release\Effie2017App.pdb

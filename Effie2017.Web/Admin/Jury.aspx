@@ -422,14 +422,15 @@
             <tr>
                 <td width="24%">
                     Bio (in words):<br />
+                    <span style="font-style: italic; font-size: 11px">Max 200 words</span><br />
                     <span style="font-style: italic; font-size: 11px">This will be used on website</span>
                 </td>
                 <td>
                     <asp:TextBox ID="txtProfile" runat="server" TextMode="MultiLine"></asp:TextBox>
                     <br />
-                    <p style="text-align: right; font-size: 12px">
+                    <%--<p style="text-align: right; font-size: 12px">
                         Remaining word count : <font color="red"><span id="show_remaining_words">350</span></font>
-                        (max 350)</p>
+                        (max 350)</p>--%>
                     <asp:HiddenField ID="hldProfileCount" runat="server" />
                 </td>
             </tr>

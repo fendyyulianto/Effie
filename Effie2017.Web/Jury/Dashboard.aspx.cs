@@ -186,6 +186,57 @@ public partial class Jury_Dashboard : PageSecurity_Jury
         //GeneralFunction.WriteTxtFile("F:\\www\\Effie2018.Web\\storage\\llog\\test.txt", "EndBind:" + DateTime.Now.ToString());
         //GeneralFunction.WriteTxtFile("F:\\www\\Effie2018.Web\\storage\\llog\\test.txt", "endBindGrid:" + DateTime.Now.ToString());
     }
+    
+
+    protected void btnClose_Click(object sender, EventArgs e)
+    {
+        phRecuseEntry.Visible = false;
+    }
+    
+    protected void btnSubmitRecuseEntry_Click(object sender, EventArgs e)
+    {
+        phRecuseEntry.Visible = false;
+        Guid EntryId = new Guid(txtEntryId.Value);
+        bool IsRecuse = false;
+
+        if (ddlRecuse.SelectedValue == "Yes") IsRecuse = true;
+        else IsRecuse = false;
+
+        RecuseEntry(txtRecuseRemarks.Text, EntryId, IsRecuse);
+    }
+
+    protected void RecuseEntry(string Text, Guid EntryId, bool IsRecuse)
+    {
+        lblError.Text = "";
+        Effie2017.App.Entry entry = Effie2017.App.Entry.GetEntry(EntryId);
+
+        Score score = GeneralFunction.GetScoreFromMatchingEntryCache(entry, jury.Id, round);
+        if (score == null)
+        {
+            score = Score.NewScore();
+            score.EntryId = entry.Id;
+            score.Juryid = jury.Id;
+            score.Round = round;
+            score.DateCreatedString = DateTime.Now.ToString();
+            score.DateSubmittedString = DateTime.Now.ToString();
+        }
+
+        if (IsRecuse)
+        {
+            score.IsRecuse = true;
+        }
+        else
+        {
+            score.IsRecuse = false;
+        }
+
+        if (score.IsValid)
+        {
+            score.RecuseRemarks = Text;
+            score.Save();
+            PopulateForm();
+        }
+    }
 
     #region Events
     protected void radGridEntry_ItemDataBound(object sender, GridItemEventArgs e)
@@ -366,37 +417,18 @@ public partial class Jury_Dashboard : PageSecurity_Jury
         // Recuse / Unrecuse
         if (e.CommandName == "Recuse" || e.CommandName == "Unrecuse")
         {
-            lblError.Text = "";
-            Effie2017.App.Entry entry = Effie2017.App.Entry.GetEntry(new Guid(e.CommandArgument.ToString()));
+            Guid EntryId = new Guid(e.CommandArgument.ToString());
 
-            Score score = GeneralFunction.GetScoreFromMatchingEntryCache(entry, jury.Id, round);
-            if (score == null)
-            {
-                score = Score.NewScore();
-                score.EntryId = entry.Id;
-                score.Juryid = jury.Id;
-                score.Round = round;
-                score.DateCreatedString = DateTime.Now.ToString();
-                score.DateSubmittedString = DateTime.Now.ToString();
-            }
+            //***** SHOW POPUP REMARKS BEFORE RECUSE ******
+            //phRecuseEntry.Visible = true;
+            //txtEntryId.Value = EntryId.ToString();
 
-            // Recuse / Unrecuse
-            if (e.CommandName == "Recuse")
-            {
-                score.IsAdminRecuse = true;
-            }
 
-            if (e.CommandName == "Unrecuse")
-            {
-                score.IsAdminRecuse = false;
-                score.IsRecuse = false;
-            }
+            bool IsRecuse = false;
+            if (e.CommandName == "Recuse") IsRecuse = true;
+            else IsRecuse = false;
 
-            if (score.IsValid)
-            {
-                score.Save();
-                PopulateForm();
-            }
+            RecuseEntry(txtRecuseRemarks.Text, EntryId, IsRecuse);
         }
     }
     protected void radGridEntry_NeedDataSource(object Sender, GridNeedDataSourceEventArgs e)
