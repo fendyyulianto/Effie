@@ -54,22 +54,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <h2>
         Scoresheet</h2>
-    <p>
-        &nbsp;</p>
-    <%--      <p>
-      Please review the Entry Form and Creative Material(s) to score the entry. To view the materials, click on the icons. <span style="text-decoration:underline" >You are advised to review the Entry Form first before the Creative Materials.</span> You may save your Scoresheet at any time before finally submitting the results.  
-      </p>
-    --%>
-    <p>
-        Click on the icon for the Entry Form, Creative Materials and Translations for Creative Materials, if applicable.
-    </p>
-    <br />
-    <p style="font-weight: bold;">
-        As a reminder, please review the written Entry Form <span style="text-decoration:underline">BEFORE</span> reviewing the Creative Materials.</p>
-    <br />
-    <p>
-        Please enter your initial scores, and save them as drafts. When you ready to confirm the scores, please go back to your Jury Dashboard (Entries Overview), click <span style="font-weight: bold;">Select All</span>, followed by <span style="font-weight: bold;">Submit</span>.</p>
-    <br />
+    <p> </p>
+
+     <p style="font-weight: bold;">Reminder: Please review the written Entry Form BEFORE reviewing the Creative Materials. </p>
+    <p> Please enter your initial scores, and save them as drafts. When you ready to confirm the scores, please return to the main page (Entries Overview). You may submit your scores individually, or en-mass by clicking the <span style="font-weight: bold;">Select All</span> button on the left side of the table, and then click <span style="font-weight: bold;">Submit Score(s).</span> </p>
+
     <hr />
     <p>
         *required fields</p>
@@ -174,6 +163,18 @@
                     </td>
                     <td style="padding-bottom: 10px">
                         <asp:Label ID="lbBrand" runat="server" />
+                    </td>
+                    <td style="padding-bottom: 10px">
+                    </td>
+                    <td style="padding-bottom: 10px">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-bottom: 10px">
+                        Client:
+                    </td>
+                    <td style="padding-bottom: 10px">
+                        <asp:Label ID="lbClient" runat="server" />
                     </td>
                     <td style="padding-bottom: 10px">
                     </td>
@@ -311,9 +312,20 @@
     </div>
     <hr />
     <div class="leftContainer">
-        For each entry, please score whole numbers <span
-            style="text-decoration: underline;font-weight: bold;">10-100</span> for each criteria, 100 being the
-            maximum score you can provide.
+        <p>For each entry, please score whole numbers from 10 to 100 for each criteria. </p><br />
+
+        <p>The Judging System will calculate the average composite scores according to the weightage assigned for each criteria. </p><br />
+
+        <p>Example: If the Judges’s score is  <span style="font-weight: bold;">85 / 90 / 87 / 90 </span>, the Judging, system will weight the scores as follows:  </p><br />
+
+        <p>Strategic Challenge + Objectives = <span style="font-weight: bold;">85</span> x 23.33% = 19.83 <br/>
+            Idea = <span style="font-weight: bold;">70</span> x 23.33% = 16.33<br/>
+            Bringing the Idea to Life = <span style="font-weight: bold;">70</span> x 23.33% = 16.33<br/>
+            30% Results = <span style="font-weight: bold;">80</span> x 30% = 24  </p><br />
+
+        <p>Composite score = <span style="font-weight: bold;">76.49</span> </p>
+
+
         <br />
         <br />
         <table width="100%" cellspacing="0" cellpadding="0" class="tableScore">
@@ -455,10 +467,17 @@
     </div>
     <div style="clear: both">
     </div>
-    <p style="font-weight:bold;">If you flag for advancement into Round 2, please ensure that your scores reflect your intent.</p><br />
+    <p>
+        Reminder: <br/> <br/>
+        1. If you flag this entry for advancement into Round 2, ensure that your scores reflect your intent. <br/> <br/>
+        2. When you amend the scores, do remember to review the Advancement flag. <br/> <br/>
+    </p><br />
     <hr />    
     <div class="leftContainer">
-    <p>In addition to your scores, please provide feedback on each case to further explain your scoring. It also offers an opportunity to provide anonymous feedback to the entrant. Please comment on the strongest and weakest elements of the case. </p>
+    <p>
+        In addition to your scores, please provide feedback on each case.  This will further explain your scoring and provide additional information to the Judging Committee.<br/> <br/>
+        In addition, these insights also give judges the opportunity to provide direct and anonymous feedback to the team who crafted the case.
+    </p>
     <br />
     <br />
         <table width="100%" border="0" cellspacing="0" cellpadding="0">

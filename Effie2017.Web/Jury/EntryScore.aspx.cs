@@ -112,6 +112,7 @@ public partial class Jury_EntryScore : PageSecurity_Jury
         lbTitle.Text = entry.Campaign;
         lbCategory.Text = GeneralFunction.GetEntryMarket(entry.CategoryMarketFromRound(round)) + "<br/>" + entry.CategoryPSDetailFromRound(round);
         lbBrand.Text = entry.Brand;
+        lbClient.Text = entry.Client;
 
         // uploads - entry form
         #region old method
@@ -393,7 +394,8 @@ public partial class Jury_EntryScore : PageSecurity_Jury
         score.ScoreID = int.Parse(txtID.Text.Trim());
         score.ScoreIL = int.Parse(txtIL.Text.Trim());
         score.ScoreRE = int.Parse(txtRE.Text.Trim());
-        score.ScoreComposite = double.Parse(GeneralFunction.CalculateCompositeScore(score.ScoreSC, score.ScoreID, score.ScoreIL, score.ScoreRE).ToString());
+        var TotalScore = GeneralFunction.CalculateCompositeScore(score.ScoreSC, score.ScoreID, score.ScoreIL, score.ScoreRE);
+        score.ScoreComposite = double.Parse(TotalScore.ToString());
 
         score.FeedbackStrong = txtFeedbackStrong.Text.Trim();
         score.FeedbackWeak = txtFeedbackWeak.Text.Trim();

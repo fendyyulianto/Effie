@@ -58,17 +58,18 @@
                         </tr>
                     </table>
                 </div>
+
                 <div class="nav" style=" font-size: 14px; ">
                     <ul id="ulNav" runat="server" visible="true">
                         <%--<li><a href="../Storage/Downloads/JuryDocuments/APAC Effie R1 Judging Guide.pdf" target="_blank">/ Judging Guide</a></li>--%>
                         <li style="margin-left: 0px;" ><a href="../storage/Downloads/JuryDocuments/AE2019 Judging Guide_R2_.pdf" target="_blank">
-                            / Judging Guide Round Two</a></li>
+                            / Round 1 Judging Guide</a></li>
                         <li style="margin-left: 0px;"><a href="../storage/Downloads/JuryDocuments/AE2019 - Categories.pdf" target="_blank">
                             / Categories</a></li>
                         <li style="margin-left: 0px;"><a href="../storage/Downloads/JuryDocuments/AE2019 - Scoring Scale.pdf" target="_blank">
                             / Scoring Scale</a></li>
                         <li style="margin-left: 0px;"><a href="../storage/Downloads/JuryDocuments/AE2019 - REASONS FOR DISQUALIFICATION.pdf"
-                            target="_blank">/ Reasons for Disqualification</a></li>
+                            target="_blank">/ Reasons for Disqualifications</a></li>
                         <%--<li><a href="../Storage/Downloads/JuryDocuments/APAC Effie FAQ.pdf" target="_blank">/ FAQ</a></li>--%>
                         <li style="margin-left: 0px;"><a href="../storage/Downloads/JuryDocuments/AE2019 - FAQ.pdf" target="_blank">
                             / FAQ</a></li>

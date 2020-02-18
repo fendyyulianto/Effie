@@ -48,3 +48,4 @@ C:\DATA\project_data\dotnet\EFFIE\EFFIE_PROJECT\Effie2017App\bin\Release\Newtons
 C:\DATA\project_data\dotnet\EFFIE\EFFIE_PROJECT\Effie2017App\bin\Release\Newtonsoft.Json.xml
 C:\DATA\project_data\dotnet\EFFIE\EFFIE_PROJECT\Effie2017App\obj\Release\Effie2017App.dll
 C:\DATA\project_data\dotnet\EFFIE\EFFIE_PROJECT\Effie2017App\obj\Release\Effie2017App.pdb
+C:\DATA\project_data\dotnet\EFFIE\EFFIE_PROJECT\Effie2017App\obj\Release\Effie2017App.csprojResolveAssemblyReference.cache

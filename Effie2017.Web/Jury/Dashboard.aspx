@@ -124,43 +124,19 @@
     <br />
     <p style="text-decoration: underline;">
         Important Reminders:</p>
-    <p>
-        &nbsp;</p>
-    <p style="font-weight: bold;">
-        To be considered for an APAC Effie Award, campaigns must offer proof of having met or exceeded clearly stated objectives. Judging procedures are primarily based on objective evidence of performance against goals.</p>
-    <br />
-    <p>
-        On the menu bar above, you will find links to the Judging Guide, Category Definitions, Scoring Scale, Reasons for DQ and FAQ.</p>
-    <br />
-    <p>
-        Please ensure that you go through the Judging Guide in it’s entirety before you commence judging, and take your time for each case.
-    </p>
-    <br />    
-    <div>
-        <span style="font-weight: bold;">RECUSAL POLICY:</span> Please review the list of entries that are assigned to you and RECUSE yourself if one or more of the following is true: <br/>
- 
-        <ul style="margin-left: 15px;">
-            <li>If it is from the agency or company where you work.</li>
-            <li>You have worked directly on the case, or </li>
-            <li>The case represents direct competitive work to a brand you work directly on.</li>
-        </ul>
+    <p> &nbsp;</p>
+    <p> On the menu bar above, you will find links to the Judging Guide, Category Definitions, Scoring Scale, Reasons for DQ and FAQ.</p><br />
 
-        <br/>
+    <p>Please ensure that you go through the Judging Guide in it’s entirety before you commence judging, and take your time for each case.</p> <br />
 
-        <span style="font-weight: bold;">To begin, click on the Score button to review all the materials and score the entry. </span> 
+    <p style="font-weight: bold;">To be considered for an APAC Effie Award, campaigns must offer proof of having met or exceeded clearly stated objectives. Judging procedures are primarily based on objective evidence of performance against goals.</p><br />
+    
+   <p> <span style="font-weight: bold;"> RECUSAL POLICY:</span> Please review the list of entries below, and recuse yourself if it’s from the agency or company where you work, you have worked directly on the case or the case represents direct competitive work to a brand you work directly on.  </p>
 
-        <br/><br/>
+   <p>To begin, click on the <span style="font-weight: bold;">Recuse</span> or <span style="font-weight: bold;">Score</span> button. The entry will be removed the moment you clicked “Recuse”.  When you click “Score”, it will bring you to the next page where you will find the score sheet along with the entry materials. </p><br />
 
-        Your initial scores will be saved as drafts to allow for calibrations and adjustments as you move along. When you are ready to confirm the scores, 
-        you may submit the cases individually or en-mass by clicking the <span style="font-weight: bold;">Select All</span> button on the left of the table, and clicking the <span style="font-weight: bold;">Submit Score(s) on this page.</span> 
+    <p>Your initial scores will be saved as drafts to allow for calibrations and adjustments as you move along. When you are ready to confirm the scores, please return to the main page (Entries Overview). You may submit your scores individually, or en-mass by clicking the <span style="font-weight: bold;">Select All</span> button on the left side of the table, and then click <span style="font-weight: bold;">Submit Score(s).</span>  </p><br />
 
-
-
-
-      <%--  <span style="font-weight: bold; text-decoration: underline;">Click on the Score button to review all the materials and score the entry.</span>  Your initial scores will be saved as drafts to allow for calibrations and adjustments as you move along. When you are ready to confirm the scores, you may submit the cases individually or en-mass by clicking the <span style="font-weight: bold;">Select All</span> button on the left of the table.--%>
-
-    </div>
-    <br />
     <%--<p>
         If you need any assistance at any time, please do not hesitate to reach out to the APAC Effie team.<br /><br />
         Email: <a href="mailto:judging.apaceffie@ifektiv.com">judging.apaceffie@ifektiv.com</a><br />
