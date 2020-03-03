@@ -4627,30 +4627,36 @@ public class GeneralFunction
         }
         if (round == "2")
         {
-            list.Add("01");
-            list.Add("02");
-            list.Add("03");
-            list.Add("04");
-            list.Add("05");
-            list.Add("06");
-            list.Add("07");
-            list.Add("08");
-            list.Add("09");
-            list.Add("10");
-            list.Add("11");
-            list.Add("12");
-            list.Add("13");
-            list.Add("14");
-            list.Add("15");
-            list.Add("16");
-            list.Add("17");
-            list.Add("18");
-            list.Add("19");
-            list.Add("20");
-            list.Add("21");
-            list.Add("22");
-            list.Add("23");
-            list.Add("24");
+            for (int i = 1; i <= 8; i++)
+            {
+                list.Add("0" + i + "A");
+                list.Add("0" + i + "B");
+                list.Add("0" + i + "C");
+            }
+            //list.Add("01");
+            //list.Add("02");
+            //list.Add("03");
+            //list.Add("04");
+            //list.Add("05");
+            //list.Add("06");
+            //list.Add("07");
+            //list.Add("08");
+            //list.Add("09");
+            //list.Add("10");
+            //list.Add("11");
+            //list.Add("12");
+            //list.Add("13");
+            //list.Add("14");
+            //list.Add("15");
+            //list.Add("16");
+            //list.Add("17");
+            //list.Add("18");
+            //list.Add("19");
+            //list.Add("20");
+            //list.Add("21");
+            //list.Add("22");
+            //list.Add("23");
+            //list.Add("24");
         }
         return list;
     }

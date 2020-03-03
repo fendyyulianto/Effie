@@ -158,7 +158,7 @@
     </div>
     <asp:PlaceHolder ID="phRound" runat="server" Visible="true">
         <div style="width: 100%; text-align: right;">
-            <table width="700px" border="0" cellspacing="0" cellpadding="0" style="float: right;">
+            <table width="800px" border="0" cellspacing="0" cellpadding="0" style="float: right;">
                 <!--
                     <tr><td style="width:70%">&nbsp;</td>
                         <td style="width:30%">
